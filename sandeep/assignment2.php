@@ -10,12 +10,12 @@
     <form action="welcome.php" method="post">
           USERNAME:<input type="text" name="username"><br>
           PASSWORD:<input type="password" name="password"><br>
-          GENDER:Male<input type="radio" name="gender:m">
-          Female:<input type="radio" name="gender:f"><br>
+          GENDER:Male<input type="radio" name="gender" value="male">
+          Female:<input type="radio" name="gender" value="female"><br>
           COUNTRY:UK<input type="radio" name="uk">
           India:<input type="radio" name="india">
           Us:<input type="radio" name="us"><br>
-          DATEBOX:<input type="text" name="datebox"><br>
+          DATEBOX:<input type="date" name="datebox"><br>
           <input type="submit" value="submit"><br> 
           <button>cancel<button>
 
