@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>switch statement</title>
-</head>
-<body>
-    <?php
-$weekday = 9;
 
-switch($weekday){
-    case 1: echo "MONDAY"; break;
-    case 2: echo "TUESDAY"; break;
-    case 3: echo "WEDNESDAY"; break;
-    case 4: echo "THURSDAY"; break;
-    case 5: echo "FRIDAY"; break;
-    case 6: echo  "SATURDAY"; break;
-    case 7: echo "SUNDAY"; break;
-    default: echo "Entre valid date";
-}
+    <?php
+$weekday = 3;
+$a="It's  ";
+switch($weekday):
+    case 1:     echo " $a MONDAY";      break;
+    case 2:     echo "$a TUESDAY";      break;
+    case 3:     echo "$a WEDNESDAY";    break;
+    case 4:     echo "$a THURSDAY";     break;
+    case 5:     echo "$a FRIDAY";       break;
+    case 6:     echo  "$a SATURDAY";    break;
+    case 7:     echo "$a SUNDAY";       break;
+    default:    echo "Entre valid date";
+endswitch;
 ?>
-</body>
-</html>
