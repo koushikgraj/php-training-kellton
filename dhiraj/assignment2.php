@@ -35,6 +35,8 @@
     <button class="btn">Submit</button><br>
   
     <button class="btn">Cancle</button><br>
+    <!-- javscript cod eto refreh the code <button onclick="location.reload();">Cancel</button>  -->
+    <!-- <input type="reset" value="Reset"> -->
 
    
 

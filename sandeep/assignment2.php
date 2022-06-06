@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<center>
+<body style="background-color:blue" padding=15pz;>
+
     <form action="welcome.php" method="post">
           USERNAME:<input type="text" name="username"><br>
           PASSWORD:<input type="password" name="password"><br>
@@ -22,6 +24,7 @@
           
 
 
-</form>    
+</form> 
+<center>   
 </body>
 </html>

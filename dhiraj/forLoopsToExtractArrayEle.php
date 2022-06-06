@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
    <?php
    echo "The elements are printed using the<b> for loops</b>:";
    $arr=[10,23,34,45,56,76];
@@ -57,11 +49,11 @@ echo "This is <b>unordered list </b>of the array elements:";
 
 
 
-echo "This is <b>ASSOCIATIVE ARRAY</B><br>:";
+echo "This is <b>ASSOCIATIVE ARRAY</B><br>";
 $b=["aaa"=>12,
-"bbb"=>23,
-"ccc"=>34,
-"ddd"=>45];
+    "bbb"=>23,
+    "ccc"=>34,
+    "ddd"=>45];
 echo $b["aaa"]."<br>";
 echo $b["bbb"]."<br>";
 echo $b["ccc"]."<Br>";
@@ -69,7 +61,12 @@ echo $b["ddd"]."<br>";
    
    
    
-   echo "<br>";
+
+
+
+
+
+echo "<br>";
    echo "Associative arr element by <b>ForEach loop</b>";
    $s=
    ["a"=>12,
@@ -83,9 +80,13 @@ echo $b["ddd"]."<br>";
    
 
 
+
+
+
+
 echo "<br>";
 
-   echo "ASSOCIATIVE arra with<B> key and value</b> using for each loops:<br>";
+   echo "ASSOCIATIVE array with<B> key and value</b> using for each loops:<br>";
 $f=[
     "a"=>12,
     "b"=>23,
@@ -141,5 +142,3 @@ echo "</ol>";
 
    ?>
 
-</body>
-</html>
