@@ -60,8 +60,9 @@
             DATE OF BIRTH:<input type="date" name="Birthdate"><br><br>
             </div>
             <div class="submit">
-            <input type="submit" style="color": lightblue;">
-            <input type="submit" name="Cancel" value="Cancel">
+            <input type="submit" style="color": lightblue;>
+            <!-- <button onclick="location.reload();">Cancel</button>  -->
+            <input type="reset" value="Reset">
             </div>
     </center>
     </form>
