@@ -52,7 +52,9 @@ if(isset($_POST['btnsubmit'])){
 <br><br>
 <input type="tel" name="telphone">
 <br><br>
-<input type="text" name="textarea">
+<input type="text" id="fname" name="fname"><br><br>
+<br><br>
+<textarea id="textarea" name="review" rows="4" cols="50"> </textarea>
 <br><br>
 <input type="time" name="time">
 <br><br>
