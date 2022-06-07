@@ -66,7 +66,7 @@ if (mysqli_num_rows($result) > 0) {
 									location.replace('delete.php?id=<?php echo $row['id'];?>')
 							};">Delete</a>
 		</td>
-	</tr>  
+	</tr> 
 <?php
   }
 } else {
