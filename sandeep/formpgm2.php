@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:lightpink;margin:70px;">
+<body style="background-color:tomato;margin:20px;">
 
-    <center>
-    <h1>WELCOME TO LUCKY RESTAURANT</h1>
+    
+        
+       
+<center>
+</form>
+
+</body>
+</html>  <h1 style="fontsize:30px;">WELCOME TO LUCKY RESTAURANT</h1><hr>
 
     <form action="site.php" method="post">
         NAME:
@@ -27,13 +33,11 @@
        BIRYANI:
        veg<input type="radio" name="biryani">nonveg<input type="radio" name="biryani"><br><br>
        PRICE:
-       forsingle:120<input type="radio" name ="biryani">forfamily:350<input type="radio" name="biryani"><br><br>
+       forsingle:120<input type="radio" name ="price">forfamily:350<input type="radio" name="price"><br><br>
        FEEDBACK:<textarea></textarea><br><br>
         <input type="submit"><br>
         
-       
-<center>
-</form>
-
+</form> 
+<center>   
 </body>
 </html>
