@@ -14,6 +14,36 @@ if (!$conn) {
 $sql = "SELECT * FROM students";
 $result = mysqli_query($conn, $sql);
 ?>
+<a href="add.php">Add New Student</a>
+<br><br>
+<?php
+if(
+	isset($_GET['action']) && 
+	$_GET['action'] == 'add' && 
+	$_GET['status'] == 'success'
+	){
+?>
+<div>Student added succesfully</div>
+<?php } ?>
+<?php
+if(
+	isset($_GET['action']) && 
+	$_GET['action'] == 'update' && 
+	$_GET['status'] == 'success'
+	){
+?>
+<div>Student updated succesfully</div>
+<?php } ?>
+<?php
+if(
+	isset($_GET['action']) && 
+	$_GET['action'] == 'delete' && 
+	$_GET['status'] == 'success'
+	){
+?>
+<div>Student delete succesfully</div>
+<?php } ?>
+
 <table border="1">
 	<tr>
 		<th>Name</th>
@@ -30,7 +60,11 @@ if (mysqli_num_rows($result) > 0) {
 		<td><?php echo $row['email'];?></td>
 		<td>
 			<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a> &nbsp; &nbsp;
-			<a href="delete.php?id=<?php echo $row['id'];?>">Delete</a>
+			<a href="#" onclick="javascript:
+							if (confirm('Do you want to delete <?php echo $row['name'];?>?'))
+								{ 
+									location.replace('delete.php?id=<?php echo $row['id'];?>')
+							};">Delete</a>
 		</td>
 	</tr>  
 <?php
@@ -40,6 +74,8 @@ if (mysqli_num_rows($result) > 0) {
 }
 ?>
 </table>
+<br>
+<a href="add.php">Add New Student</a>
 <?php
 
 mysqli_close($conn);
