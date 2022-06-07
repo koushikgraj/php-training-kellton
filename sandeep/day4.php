@@ -11,7 +11,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM studentdetail";
+$sql = "SELECT * FROM data";
 $result = mysqli_query($conn, $sql);
 ?>
 <table border="1">
