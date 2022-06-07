@@ -102,6 +102,8 @@ foreach($f as $k=>$v)
 
 
 
+
+
 echo "Associative array<b> unordered list</B> in foreach loop:<br>";
 
 $d=

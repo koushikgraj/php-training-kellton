@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>
-		login page
-	</title>
-</head>
-<body>
-	<?php
 
-	<h1><center>FORM</center></h1>
-	
+	<?php
 	FirstName:<input type="text"placeholder="FirstName"> <br>
 	LastName:<input type="text"placeholder="LastName"><br>
 	Email:<input type="text"placeholder="Email"><br>
@@ -28,5 +15,3 @@
 
 	
 
-</body>
-</html>
