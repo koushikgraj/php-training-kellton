@@ -41,7 +41,7 @@ if(isset($_POST['btnsubmit'])){
    <input type="tel" name="tel" placeholder="Enter Number"><br>
 
 
-   <h1>Booking Information</h1><br>
+   <h1><u>Booking Information<u></h1><br>
    <h2>Check-in-Date</h2>  <br>
    <input type="date" name="date"><br>
    
@@ -88,7 +88,7 @@ if(isset($_POST['btnsubmit'])){
    <input type="number" name="numb" placeholder="Total Amount"><br>
 
    <h2>Notes/Special Requirements</h2><br>
-   <textarea type="desc" name="desc" placeholder="Description"></textarea><br><br>
+   <textarea type="desc" name="desc" cols=40 rows=7 placeholder="Description"></textarea><br><br>
 
 
     <!-- <button class="btn"  name="btn" value="submit">Submit</button><br> -->

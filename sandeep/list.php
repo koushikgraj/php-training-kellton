@@ -2,15 +2,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
-
+$dbname = "details";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
 $sql = "SELECT * FROM students";
 $result = mysqli_query($conn, $sql);
 ?>
@@ -28,7 +26,7 @@ if(
 <?php
 if(
 	isset($_GET['action']) && 
-	$_GET['action'] == 'update' && 
+    $_GET['action'] == 'update' && 
 	$_GET['status'] == 'success'
 	){
 ?>
@@ -48,6 +46,10 @@ if(
 	<tr>
 		<th>Name</th>
 		<th>Email</th>
+        <th>age</th>
+        <th>country</th>
+        <th>dob</th>
+        <th>gender</th>
 		<th>&nbsp;</th>
 	</tr>
 <?php
@@ -58,15 +60,20 @@ if (mysqli_num_rows($result) > 0) {
 	<tr>
 		<td><?php echo $row['name'];?></td>
 		<td><?php echo $row['email'];?></td>
+        <td><?php echo $row['age'];?></td>
+        <td><?php echo $row['country'];?></td>
+        <td><?php echo $row['dob'];?></td>
+        <td><?php echo $row['gender'];?></td>
 		<td>
 			<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a> &nbsp; &nbsp;
+		
 			<a href="#" onclick="javascript:
 							if (confirm('Do you want to delete <?php echo $row['name'];?>?'))
 								{ 
 									location.replace('delete.php?id=<?php echo $row['id'];?>')
 							};">Delete</a>
 		</td>
-	</tr> 
+	</tr>  
 <?php
   }
 } else {
@@ -79,7 +86,6 @@ if (mysqli_num_rows($result) > 0) {
 <?php
 
 mysqli_close($conn);
-
 function pr($data)
 {
 	echo "<pre>";print_r($data);echo "</pre>";

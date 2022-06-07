@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "phpdatabase";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM students";
+$sql = "SELECT * FROM student";
 $result = mysqli_query($conn, $sql);
 ?>
 <a href="add.php">Add New Student</a>
@@ -48,6 +48,10 @@ if(
 	<tr>
 		<th>Name</th>
 		<th>Email</th>
+		<th>date_of_birth</th>
+		<th>age</th>
+		<th>gender</th>
+		<th>country</th>
 		<th>&nbsp;</th>
 	</tr>
 <?php
@@ -58,6 +62,10 @@ if (mysqli_num_rows($result) > 0) {
 	<tr>
 		<td><?php echo $row['name'];?></td>
 		<td><?php echo $row['email'];?></td>
+		<td><?php echo $row['date'];?></td>
+		<td><?php echo $row['age'];?></td>
+		<td><?php echo $row['gender'];?></td>
+		<td><?php echo $row['country'];?></td>
 		<td>
 			<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a> &nbsp; &nbsp;
 			<a href="#" onclick="javascript:
@@ -66,7 +74,7 @@ if (mysqli_num_rows($result) > 0) {
 									location.replace('delete.php?id=<?php echo $row['id'];?>')
 							};">Delete</a>
 		</td>
-	</tr> 
+	</tr>  
 <?php
   }
 } else {
