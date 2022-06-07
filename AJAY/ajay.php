@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+<?php
+if(isset($_POST['btnsubmit'])){
+	echo "<pre>";print_r($_POST);echo "</pre>";
+}
+?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>signin</title>
 </head>
-<body style="background-color: greenyellow;"> >
+<body style="background-color: pink;"> >
 	<center>
-	<form action="signregister.php" method="post" style="padding-top: 100px;">
+	<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 		<textarea></textarea>NAME:<input type="text" name="name" required>
 
 	<br><br>
@@ -76,9 +81,9 @@
 
 
 
-
-		<input type="submit" style="color: lightblue;" >
-		<input type="submit" name="cancel" value="cancel">
+         
+		<input type="submit"name="btnsubmit" style="color: lightblue;" >
+		<input type="reset" name="cancel" value="cancel">
 	</form>
 	</center>
 </body>
