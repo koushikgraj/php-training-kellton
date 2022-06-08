@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <?php
 if(isset($_POST['btnsubmit'])){
 	echo "<pre>";print_r($_POST);echo "</pre>";
+    //echo $_POST['fname'];
 }
+
 ?>
 <html>
     <head>
         <title>Hotel Booking Page</title>
     </head>
-    <body>
-        <form action="?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <body bgcolor="pink">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <center>
             <fieldset>
                 <legend align="center"><h1>Hotel Booking</h1></legend>
