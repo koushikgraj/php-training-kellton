@@ -3,7 +3,7 @@ if(isset($_POST['submitbtn'])){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "php_training";
+	$dbname = "AJAY";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if(isset($_POST['submitbtn'])){
 	if (!$conn) {
 	  die("Connection failed: " . mysqli_connect_error());
 	}
-//mysqli_real_escape_string function() is used to escape all special character for use in an sql query.It is used before inserting a string in a database,as it removes any special character that may interface with the query operation.
+
 	$name = mysqli_real_escape_string($conn, $_POST['name']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	$age = mysqli_real_escape_string($conn, $_POST['age']);
