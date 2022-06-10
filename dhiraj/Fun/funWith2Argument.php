@@ -7,7 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
+    <?php
+function x($a , $b)
+{
+    echo "first argument: ".$a." Second argument: ".$b."<br>";  
+}
+x(1000,2000);
+x("Ram", "Sham");
+x("Hari", " Gita");
+x("Dhiraj",12000);
+?>
+
 </body>
 </html>

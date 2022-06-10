@@ -8,17 +8,16 @@
 </head>
 <body>
     <?php
-
-
-for($a=1; $a<=20; $a++)
-{
-    echo $a ; 
+function hello(){
+    echo "Hey RAM<br>";
 }
+hello();
+hello();
+hello();
+hello();
+hello();
 
-
-
-
-    ?>
+?>
 
 </body>
 </html>

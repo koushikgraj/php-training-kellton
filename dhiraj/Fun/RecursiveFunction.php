@@ -7,21 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
     <?php
-$a= "<h1>Dhiraj</h1>";
-$a.=" is my ";
-$a.= "name.";
-echo $a."<br>";
+function abc($a)
+{
+    if($a <= 5)
+    {
+        echo "$a  <br>";
+        abc($a+1);
+    }
+}
+abc(1);
 
 
 
 
-$b= "dhiraj has ";
-$b.=5000;
-$b.="rupees in his pocket";
-echo $b;
-
-
-    ?>
+?>
 </body>
 </html>
