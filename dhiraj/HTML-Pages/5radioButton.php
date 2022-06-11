@@ -7,18 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Printing the text area data:
-</h1>
-Your text area data is:<br> 
+Your are: 
 <?php
+if(isset($_REQUEST["gen"])){
+    echo $_REQUEST["gen"];
+}else{
+    echo "Dont want to specify";
+    
+}
 
-$text= $_REQUEST["data"];
-echo str_replace("\n", "<br>", $text);
 
+    ?>
 
-
-
-?>
 </body>
 </html>

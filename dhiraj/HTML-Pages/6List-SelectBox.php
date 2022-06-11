@@ -7,17 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Printing the text area data:
-</h1>
-Your text area data is:<br> 
-<?php
-
-$text= $_REQUEST["data"];
-echo str_replace("\n", "<br>", $text);
-
-
-
+    you selected the:<br>
+    <?php
+foreach($_REQUEST["num"] as $selected){
+    echo $selected ."<br>";
+}
 
 ?>
 </body>

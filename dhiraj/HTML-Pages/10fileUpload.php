@@ -7,18 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Printing the text area data:
-</h1>
-Your text area data is:<br> 
-<?php
+    <?php
+$handle = fopen($_FILES['files']['pictures'], "r");
 
-$text= $_REQUEST["data"];
-echo str_replace("\n", "<br>", $text);
-
-
-
-
+while(!feof($handle))
+{
+    $text =fgets($handle);
+    echo $text,  "<br>";
+}
+fclose($handle);
 ?>
+    
 </body>
 </html>

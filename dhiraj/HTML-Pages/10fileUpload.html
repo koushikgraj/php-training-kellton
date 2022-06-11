@@ -7,18 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Printing the text area data:
-</h1>
-Your text area data is:<br> 
-<?php
-
-$text= $_REQUEST["data"];
-echo str_replace("\n", "<br>", $text);
-
-
-
-
-?>
+    Upload the file:
+    <form method="post" action="10fileUpload.php" enctype="multipart/form-data">
+        <input type="file" name="files">
+        <input type="submit" value="Upload">
+    </form>
 </body>
 </html>

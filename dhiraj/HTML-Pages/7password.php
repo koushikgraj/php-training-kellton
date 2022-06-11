@@ -7,18 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Printing the text area data:
-</h1>
-Your text area data is:<br> 
-<?php
-
-$text= $_REQUEST["data"];
-echo str_replace("\n", "<br>", $text);
+    Your password is  :
+    <?php
+echo $_REQUEST["pass"];
 
 
+    ?>
 
-
-?>
 </body>
 </html>
