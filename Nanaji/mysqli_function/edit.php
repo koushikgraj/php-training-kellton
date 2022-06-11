@@ -34,7 +34,7 @@ if(isset($_POST['submitbtn'])){
 
 
 //read the data from database to populate text box records
-$id = mysqli_real_escape_string($conn, $_GET['ID']);
+$id = mysqli_real_escape_string($conn, $_GET['id']);
 $sql_select = "SELECT * FROM students WHERE ID = '$id'";
 $qry_select = mysqli_query($conn, $sql_select);
 $row = mysqli_fetch_assoc($qry_select);
@@ -83,7 +83,7 @@ $row = mysqli_fetch_assoc($qry_select);
 						Country:
 					</td>
 					<td>
-						<input type="text" name="country" value="<?php echo $row['Country'];?>" placeholder="Enter Email" required>
+						<input type="text" name="country" value="<?php echo $row['Country'];?>">
 					</td>
 				</tr>
 				<tr>
@@ -91,7 +91,8 @@ $row = mysqli_fetch_assoc($qry_select);
 						Gender:
 					</td>
 					<td>
-						<input type="radio" name="gender" value="<?php echo $row['Gender'];?>">
+						<input type="radio" name="gender" value="<?php echo $row['Male'];?>">Male<br>
+						<input type="radio" name="gender" value="<?php echo $row['Female'];?>">Female
 					</td>
 				</tr>
 				<tr>
