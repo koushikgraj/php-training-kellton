@@ -1,0 +1,1 @@
+SELECT * FROM ajaydb1.student;
