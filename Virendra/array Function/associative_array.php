@@ -18,6 +18,11 @@ $sallary =array("viren" => 20000,"sagar" =>2000,"shubham" =>20000, 100=>342 ,"ni
  
   echo "Sallary of Viren is ".$sallary['viren']."</br";
   echo "Sallary of Sagar is ".$sallary['sagar']."</br>";
-  echo "Sallary of Shubham is ".$sallary['rahul']."</br>";
+  echo "Sallary of Shubham is ".$sallary['shubham']."</br>";
+   echo "</pre>";
+   print_r($sallary);
+   echo"</pre>"
+
+// var_dump($sallary);
 
 ?>
