@@ -1,12 +1,22 @@
 <?php
+$Name = $_POST['name'];
+$Email = $_POST['email'];
+$Address = $_POST['address'];
+$Mobile = $_POST['mobile'];
 
-$con=new mysqli('localhost','root','','crud');
+$con=new mysqli('localhost','root','','p12');
 
-if($con){
-	echo "connection sucessfull";
+if($con->connect_error){
+	die('connection failed : '.$conn->connect_error);
 
 }
 else{
-	die(mysqli_error($con));
+	$stmt = $conn->prepare("insert into p12("name","email","address","mobile")
+		values(?,?,?,?)");
+	$stmt->bind_param("ssss",$name,$email,$address,$mobile);
+	$stmt->execute();
+	echo "connection successfully";
+	$stmt->close();
+	$conn->close();
 }
 ?>
