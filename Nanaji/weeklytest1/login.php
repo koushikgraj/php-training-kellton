@@ -12,13 +12,6 @@ Username: <input type="text" name="name" ><br><br>
 
 Password: <input type="password" name="password" ><br><br>
 
-E-mail: <input type="Email" name="E-mail" ><br><br>
-
-Date of birth: <input type="date" name="date" ><br><br>
-
-Gender: 
-<input type="radio" name="Gender" value="Male" > Male
-<input type="radio" name="Gender" value="Female" > Female<br><br>
 
 <input type="submit"  name="submit" value="signin"style="background-color:lightblue">
 </form>
