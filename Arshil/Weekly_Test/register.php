@@ -1,29 +1,39 @@
-<!DOCTYPE html>
+<?php
+if(isset($_POST['submitbtn'])){
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "assesment";
+
+	// Create connection
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	// Check connection
+	if (!$conn) {
+	  die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$name = mysqli_real_escape_string($conn, $_POST['Username']);
+	$email = mysqli_real_escape_string($conn, $_POST['Email']);
+	$age = mysqli_real_escape_string($conn, $_POST['Password']);
+	$password = mysqli_real_escape_string($conn, $_POST['DOB']);
+	
+	$sql = "INSERT INTO student 
+				(id, name, Password , Email, DOB)
+				VALUES (NULL, '$name', '$Email', '$Password', '$DOB');";
+	$qry = mysqli_query($conn, $sql);
+	echo "<script>location.replace('list.php?action=add&status=success');</script>";
+}
+?>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>registration form</title>
-	<style>
-			.loginbox{
-				    width: 320px;
-    				height: 420px;
-    				background: darkseagreen;
-    				color: black;
-    				margin-top: 100px;
-    				margin-left: 500px;
-    				position: absolute;
-   				    box-sizing: border-box;
-   				    padding-right: 20px;
-			}
-		</style>
-</head>
-<body>
-
-
-	<div class="loginbox">
+	<head>
+		<title>Add new student</title>
+		
+		
+	</head>
+	<body>
+			
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-			<center><h1 style="color: white;">LoginBox</h1></center>
+			<center><h1 style="color: white;">LoginBox</h1>
 			<table>
 				<tr>
 					<td>Username:</td>
@@ -64,7 +74,8 @@
 				</tr>
 			</table>
 		</form>
-	</div>
+        </center>
 
-</body>
+		
+	</body>
 </html>
