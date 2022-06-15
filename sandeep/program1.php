@@ -1,17 +1,20 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head>upload CSV file</head>
 	<title></title>
-</head>
+
 <body>
-<form method="post" action="site.php">
+
+
+ 
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?enctype="multipart/form-data">
 
 	
 
 	<input type="text" name="username" placeholder="Enter username" required />
 	<br><br>
-	<input type="text" name="password" placeholder="Enter password" required />
+	<input type="file" name="image" size="1.5MB"; required />
 	<br><br>
 	<input type ="submit">
 
