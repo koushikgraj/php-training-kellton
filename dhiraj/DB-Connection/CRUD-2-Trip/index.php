@@ -14,7 +14,7 @@ if (!$conn) {
   }
   
 //connecting to database
-// $name=$_POST['id'];
+
 $name=$_POST['name'];
 $gender=$_POST['gender'];
 $age=$_POST['age'];
@@ -36,10 +36,9 @@ the first one is correct and the second on is wrong way to declear the query
 $sql="INSERT INTO `db`.`trip` (`name`,`gender`,`age`) VALUES ('$name','$gender','$age');";
 echo $sql;
 echo "<br><br>";
-// echo "<script>location.replace('index.php');</script>";
-}
-// $qry = mysqli_query($conn, $sql);
+?>
 
+<?php
 //this four line of code help to insert the $sql query in the database
 $result = $conn->query($sql);
 
@@ -50,8 +49,17 @@ if($result == true){
     echo "ERROR: $sql <br> $conn->error";
 }
 
-// $conn->close();
+$conn->close();
+}
 
+
+
+
+
+//first this form will be executed and when submit is done then the post 
+//method come in action and chenk where to send the data in which form 
+//so in same form post has to send the is made by the form action 
+//and starts executiong the database connection code
 ?>
 
 <!DOCTYPE html>
