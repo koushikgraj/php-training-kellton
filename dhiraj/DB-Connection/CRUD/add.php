@@ -94,11 +94,11 @@ if(isset($_POST['submitbtn'])){
 					<td>
 					<select class="select" name="country" id ="car">
           <option value="NO-country">Select Your Country</option>
-          <option value="NO-country">INDIA</option>
-          <option value="NO-country">NEPAL</option>
-          <option value="NO-country">JAPAN</option>
-          <option value="NO-country">US</option>
-          <option value="NO-country">UK</option>
+          <option value="INDIA">INDIA</option>
+          <option value="NEPAL">NEPAL</option>
+          <option value="JAPAN">JAPAN</option>
+          <option value="US">US</option>
+          <option value="UK">UK</option>
           </select>
 					</td>
 				</tr>
