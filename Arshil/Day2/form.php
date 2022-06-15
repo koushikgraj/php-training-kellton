@@ -7,16 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-$handle = fopen($_FILES['files']['pictures'], "r");
-
-while(!feof($handle))
-{
-    $text =fgets($handle);
-    echo $text,  "<br>";
-}
-fclose($handle);
-?>
-    
+    <center>
+        <form action="page.php" method="post">
+            Name: <input type="text" name="name" /><br><br>
+            Password: <input type="password" name="pass" /><br><br>
+            <input type ="submit">
+        </form>
+    </center>
 </body>
 </html>
