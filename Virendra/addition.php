@@ -1,3 +1,4 @@
+<?php
 class Addition 
 {
     var $x;
@@ -10,7 +11,7 @@ class Addition
 }
 
 $obj = new Addition();
-$obj->x= 5;
+$obj->x= 5
 $obj->y = 30;
 
 echo $obj->addnumbers();
