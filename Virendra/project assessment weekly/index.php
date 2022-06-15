@@ -1,5 +1,7 @@
 <?php
 if(isset($_POST['btnsubmit'])){
+    echo "<pre>";print_r($_POST);echo "</pre>";
+    
    
 	$servername = "localhost";
 	$username = "root";
@@ -30,7 +32,7 @@ if(isset($_POST['btnsubmit'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Registration Page</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
     
     </head>
