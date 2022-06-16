@@ -1,0 +1,32 @@
+*
+{
+    margin: 0px;
+
+}
+#header
+  {
+      height: 100px;
+      background-color: pink;
+
+  }
+#middle
+ {
+        height: 450px;
+        background-color: orange;
+
+ }
+
+ #footer
+ {
+     height: 100px;
+     background-color: cyan;
+ }
+
+ .part
+  {
+      width: 49%;
+      background-color: gray;
+      border: 1px solid red;
+      float: left;
+      height: 50%;
+  }

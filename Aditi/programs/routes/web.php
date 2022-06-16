@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirstController;
+use App\Http\Controllers\SecondController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,22 @@ Route::get('/a', function () {
 Route::get('/new', function () {
     return view('new');
 });
+
+Route::get('/ne/profile', function () {
+    return 'this is new page';
+})->name('profile');
+
+Route::get('/user/{id}', function ($id) {
+    return 'User '.$id;
+});
+Route::get('/user/{id}', function ($id='20') {
+    return 'User '.$id;
+});
+
+Route::get('/books', [FirstController::class, 'books' ]);
+
+Route::get('/second', [SecondController::class, 'second' ]);
+Route::get('/get-subjects', [FirstController::class, 'getsubjects' ]);
+Route::get('/create-subjects', [FirstController::class, 'createsubjects' ]);
+
+

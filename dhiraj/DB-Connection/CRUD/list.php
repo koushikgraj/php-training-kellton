@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
 		<td><?php echo $row['country'];?></td>
 		<td><?php echo $row['date'];?></td>
 		<td>
-			<a href="edit-1.php?id=<?php echo $row['id'];?>">Edit</a> &nbsp; &nbsp;
+			<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a> &nbsp; &nbsp;
 			
 			<a href="#" onclick="javascript:
 							if (confirm('Do you want to delete <?php echo $row['name'];?>?'))
