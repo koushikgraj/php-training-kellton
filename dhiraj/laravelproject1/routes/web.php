@@ -3,7 +3,12 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\FirstcountController;
 
-use App\Http\Controllers\ContnameController;
+
+//this is working route
+// use App\Http\Controllers\ContnameController;
+
+use App\Http\Controllers\MemberController;
+// use App\Http\Controllers\ContfirstController;
 // use App\Http\Controllers\Secondcont;
 // use\App\Models\Subject;
 /*
@@ -42,10 +47,18 @@ Route::get('/a', function(){
 //this is working route
 // Route::get('/get-data',[FirstcountController::class,'getSub']);
 
+//this is working route
+// Route::get('/url',[ContnameController::class,'contfunction']);
 
-Route::get('/url',[ContnameController::class,'contfunction']);
+// Route::get('/read',[ContfirstController::class,'cfun']);
+// Route::get('/create',[ContfirstController::class,'cSub']);
+// Route::get('/update',[ContfirstController::class,'uSub']);
+// Route::get('/delete',[ContfirstController::class,'dSub']);
 
-
+Route::view('add','addMembers');
+Route::post('add',[MemberController::class,'addData']);
+Route::get('list',[MemberController::class,'list']);
+Route::get('delete/{id}',[MemberController::class,'delete']);
 
 /*
 Route::get('/h', function(){
