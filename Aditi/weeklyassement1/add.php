@@ -3,7 +3,7 @@ if(isset($_POST['submitbtn'])){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "assesment";
+	$dbname = "form";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -12,14 +12,23 @@ if(isset($_POST['submitbtn'])){
 	  die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$name = mysqli_real_escape_string($conn, $_POST['Username']);
-	$email = mysqli_real_escape_string($conn, $_POST['Email']);
-	$age = mysqli_real_escape_string($conn, $_POST['Password']);
-	$password = mysqli_real_escape_string($conn, $_POST['DOB']);
-	
-	$sql = "INSERT INTO registration 
-				( Username,Email, Password, DOB)
-				VALUES ( '$Username', '$Email', '$Password', '$DOB');";
+	$username = mysqli_real_escape_string($conn, $_POST['username']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	$dob = mysqli_real_escape_string($conn, $_POST['dob']);
+	if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+		$name_error = "Name must contain only alphabets and space";
+		}
+	if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+		$email_error = "Please Enter Valid Email ID";
+		}
+	if(strlen($password) < 6) {
+		$password_error = "Password must be minimum of 6 characters";
+		}  	
+		
+	$sql = "INSERT INTO data 
+				( username,email,password,dob)
+				VALUES ( '$username', '$email', '$password', '$dob');";
 	$qry = mysqli_query($conn, $sql);
 	echo "<script>location.replace('login.php?action=add&status=success');</script>";
 }
@@ -48,35 +57,27 @@ if(isset($_POST['submitbtn'])){
 			<table>
 				<tr>
 					<td>Username:</td>
-					<td><input type="text" name="Username" placeholder="Enter Name" required></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input type="Password" name="Password" placeholder="Enter Password" required></td>
+					<td><input type="text" name="username" placeholder="Enter Name" required>
+					<?php if (isset($name_error)) echo $name_error; ?>
+					</td>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><input type="email" name="Email" placeholder="Enter email" required></td>
+					<td><input type="email" name="email" placeholder="Enter Email" required>
+					<?php if (isset($email_error)) echo $email_error; ?>
+					</td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" placeholder="Enter Password" required>
+					<?php if (isset($password_error)) echo $password_error; ?>
+					</td>
 				</tr>
 				<tr>
 					<td>DOB:</td>
-					<td><input type="date" name="DOB" placeholder="Enter DOB" required></td>
+					<td><input type="date" name="dob" placeholder="Enter DOB" required></td>
 				</tr>
-				<tr>
-				<td><p>Gender:</p></td>
-				</tr>
-				<tr>
-				<td>Male:</td>
-  				<td><input type="radio" name="Male">
-  				</tr>
-  								<tr>
-				<td>feMale:</td>
-  				<td><input type="radio" name="female">
-  				</tr>
-  				<tr>
-				<td>others:</td>
-  				<td><input type="radio" name="others" value="30">
-  				</tr>
+
 				<tr>
 					<td> </td>
 					<td>
@@ -84,10 +85,8 @@ if(isset($_POST['submitbtn'])){
 					</td>
 				</tr>
 			</table>
+			<p> have an account? <a href="login.php">Sign up</a></p>
 		</form>
 	</div>
-
-		<br>
-		<a href="list.php">Got to student list</a>
 	</body>
 </html>

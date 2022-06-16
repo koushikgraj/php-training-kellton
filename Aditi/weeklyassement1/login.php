@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "assesment";
+$dbname = "form";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,30 +11,20 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM registration";
+$sql = "SELECT * FROM data";
 $result = mysqli_query($conn, $sql);
 ?>
-<a href="adddb.php">Add New Student</a>
-<br><br>
-<?php
-if(
-	isset($_GET['action']) && 
-	$_GET['action'] == 'add' && 
-	$_GET['status'] == 'success'
-	){
-?>
-<div>Student login succesfully</div>
-<?php } ?>
-
-
 
 <div class="container">
         <center><h1 style="color: white;">Login</h1></center>
-        <form method="post" action="">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 
-            Email:<input type="email" name="Email" id="email" placeholder="Email" required><br><br>
-            Password:<input type="password" name="Password" id="password" placeholder="Password" required><br>
-            <br><br>
+			Username:<input type="text" name="username" id="username" placeholder="username" required><br><br>
+            Email:<input type="email" name="email" id="email" placeholder="Email" required><br><br>
+            <?php if (isset($email_error)) echo $email_error; ?>
+			Password:<input type="password" name="password" id="password" placeholder="Password" required><br>
+            <?php if (isset($password_error)) echo $password_error; ?>
+			<br><br>
             <input type="submit" name="login" id="login" value="Login">
             <p>Don't have a account? <a href="add.php">Sign up</a></p>
         </form>
@@ -44,12 +34,7 @@ if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
 ?>
-	<tr>
-		<td><?php echo $row['Username'];?></td>
-		<td><?php echo $row['Email'];?></td>
-		<td><?php echo $row['Password'];?></td>
-		<td><?php echo $row['DOB'];?></td> 
-	</tr> 
+
 <?php
   }
 } else {
@@ -88,6 +73,5 @@ function pr($data)
    				    padding-right: 20px;
 	}
 </style>
-
 </body>
 </html>
