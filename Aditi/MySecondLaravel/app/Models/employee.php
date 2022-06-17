@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class subjects extends Model
+class employee extends Model
 {
     use HasFactory;
 
-protected $table = 'subjects';
-public $timestams = false;
+    protected $table="employee";
+    public $timestamps=false;
+}
 
-public static function readTbl()
-{
-    return self::all();
-}
-}
