@@ -3,11 +3,16 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\FirstcountController;
 
+use App\Http\Controllers\PostController;
 
 //this is working route
 // use App\Http\Controllers\ContnameController;
 
-use App\Http\Controllers\MemberController;
+
+// use App\Http\Controllers\MemberController;
+
+
+
 // use App\Http\Controllers\ContfirstController;
 // use App\Http\Controllers\Secondcont;
 // use\App\Models\Subject;
@@ -25,14 +30,16 @@ use App\Http\Controllers\MemberController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('dk', function(){
-    return view('Oops@index');
-});
-Route::get('/a', function(){
-    return view('dk');
-});
+// Route::get('dk', function(){
+//     return view('Oops@index');
+// });
+// Route::get('/a', function(){
+//     return view('dk');
+// });
 
 
+
+Route::resource('posts', PostController::class);
 
 
 // Route::get('/f',[Firstcont::class,'first']);
@@ -55,11 +62,18 @@ Route::get('/a', function(){
 // Route::get('/update',[ContfirstController::class,'uSub']);
 // Route::get('/delete',[ContfirstController::class,'dSub']);
 
-Route::view('add','addMembers');
-Route::post('add',[MemberController::class,'addData']);
-Route::get('list',[MemberController::class,'list']);
-Route::get('delete/{id}',[MemberController::class,'delete']);
+// Route::view('add','addMembers');
+// Route::post('add',[MemberController::class,'addData']);
+// Route::get('list',[MemberController::class,'list']);
+// Route::get('delete/{id}',[MemberController::class,'delete']);
+// Route::get('edit/{id}',[MemberController::class,'showdata']);
+// Route::post('edit',[MemberController::class,'update']);
 
+
+
+
+
+// Route::resource('posts', PostController::class);
 /*
 Route::get('/h', function(){
     return view('first');
