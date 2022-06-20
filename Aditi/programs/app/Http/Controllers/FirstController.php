@@ -25,7 +25,14 @@ class FirstController extends Controller
     }
 
     public function updatesubjects(){
-        Flight::where('active', 1)->updated(['delayed' =>1]);
+        subjects::where('id', 1)->update(['subject' => 'Sanskrit']);
+        echo "Subject updated succesfully";
+    }
+
+    public function deleteSubjects()
+    {
+        subjects::where('subject', 'Hindi')->delete();
+        echo "Subject deleted succesfully";
     }
 
 }

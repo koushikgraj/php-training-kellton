@@ -11,4 +11,9 @@ class subjects extends Model
 
 protected $table = 'subjects';
 public $timestams = false;
+
+public static function readTbl()
+{
+    return self::all();
+}
 }

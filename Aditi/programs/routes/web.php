@@ -39,9 +39,11 @@ Route::get('/user/{id}', function ($id='20') {
 });
 
 Route::get('/books', [FirstController::class, 'books' ]);
-
 Route::get('/second', [SecondController::class, 'second' ]);
+
 Route::get('/get-subjects', [FirstController::class, 'getsubjects' ]);
 Route::get('/create-subjects', [FirstController::class, 'createsubjects' ]);
+Route::get('/update-subjects', [FirstController::class, 'updatesubjects']);
+Route::get('/delete-subjects', [FirstController::class, 'deletesubjects']);
 
 
