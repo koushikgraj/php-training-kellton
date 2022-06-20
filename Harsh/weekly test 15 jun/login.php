@@ -1,33 +1,25 @@
-<?php
-  $servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "php_training";
 
-	// Create connection
-	$conn = mysqli_connect($servername, $username, $password, $dbname);
-	// Check connection
-	if (!$conn) {
-	  die("Connection failed: " . mysqli_connect_error());
-	}  
-    ?>
-    <html>
-    <head></head>
-    <body>
-        <center>
-        <h1>Registration form</h1>
-        <form action="signup.php"method="post">
-USERNAME:<input type="text"name="username"><br><br>
-    PASSWORD:<input type="password"name="password"><br><br>
-    EMAIL:<input type="email"name="email"><br><br>
-    DATE OF BIRTH:<input type="date"name="date"><br><br>
-    
-    GENDER:<br><input type="radio"name="gender"value="male">MALE<br>
-    <input type="radio"name="gender"value="female">FEMALE<br>
-    <input type="radio"name="gender"value="other">OTHER<br>
-    <input type="submit"name="submit" value="Save Student">>
+<html>
+	<head>
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+			USERNAME: <input type="text"name="username"value="username">
+			PASSWORD: <input type="password"name="password"value="password">
+			<input type="submit"name="submit"value="submit">
+		</form>
+	</head>
+</html><?php
+   if (isset($_POST['submit'])) {
+       $username = $_POST['username'];
+       $password  = $_POST['password'];
 
-</form>
-</center>
-    </body>
-</html>
+       if ($username == 'username'  && $password == 'password'){
+        session_start();
+           $_SESSION['submit'] = true;
+		   echo "succesfully login";
+	   }
+           
+        //    header('Location: ../admin/dashboard.php');       }
+       else{
+           echo 'Invalid Credential';
+       }
+   }

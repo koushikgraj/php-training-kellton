@@ -3,13 +3,13 @@
 $servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "php_training";
+	$dbname = "student";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	// Check connection
 	if (isset($_POST['submit'])){
-        if(!empty($_POST['username']) &&!empty($_POST['password'])&&!empty($_POST['email'])&&!empty($_POST['date'])!empty($_POST['gender'])){
+       
             $username=$_POST['username'];
             $password=$_POST['password'];
             $email=$_POST['email'];
@@ -25,7 +25,7 @@ $servername = "localhost";
                 echo "form not submitted";
             }
         }
-    }
+    
 	  
     
     ?>
