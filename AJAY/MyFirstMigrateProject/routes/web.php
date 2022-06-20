@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use Illuminate\Database\Migrations\Migration;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +16,3 @@ use Illuminate\Database\Migrations\Migration;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/posts', PostController::class);
-
