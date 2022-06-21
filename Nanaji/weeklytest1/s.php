@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['submitbtn'])){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -81,12 +81,12 @@ if(isset($_POST['submit'])){
 					<td> </td>
 					<td>
 						
-						<input type="submit" name="submit" value="submit ">
+						<input type="submit" name="submitbtn" value="submit ">
 					</td>
 				</tr>
 			</table>
 		</form>
 		<br>
-		<a href="registration.php">Got to registration</a>
+		<a href="login.php">Got to login</a>
 	</body>
 </html
