@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TechController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/greeting', function () {
-    return ('welcome');
+Route::middleware([CheckStatus::class])->group(function(){
+
+
+
+
+    Route::get('/home', [HomeController::class,'home']);
+
+
+
+
 });
 
-// Route::get('/show1', function () {
-//     return ('welcome');
-// });
-
-Route::resource('/tech', TechController::class);

@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TechController;
-
+use App\Http\Controllers\MidController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +13,12 @@ use App\Http\Controllers\TechController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/greeting', function () {
+Route::get('/aa', function () {
     return ('welcome');
 });
 
-// Route::get('/show1', function () {
-//     return ('welcome');
-// });
+Route::middleware([Trail::class])->group(function(){
 
-Route::resource('/tech', TechController::class);
+    Route::get('/test', [MidController::class,'mid']);
+
+});
