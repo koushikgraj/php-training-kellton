@@ -22,9 +22,14 @@ Route::get('yaa', function () {
     return view('add');
 });
 
-Route::post('yaa',[UserController::class,'getdata']);
-Route::get('add',[GoodController::class,'show']);
-Route::get('delet/{id}',[GoodController::class,'delete']);
-Route::get('edit/{id}',[GoodController::class,'showdata']);
-Route::post('edit',[GoodController::class,'update']);
+// Route::post('yaa',[UserController::class,'getdata']);
+// Route::get('add',[GoodController::class,'show']);
+// Route::get('delet/{id}',[GoodController::class,'delete']);
+// Route::get('edit/{id}',[GoodController::class,'showdata']);
+// Route::post('edit',[GoodController::class,'update']);
+Route::view('users','user');
+Route::view('hello','noaccess');
+
+
+
 

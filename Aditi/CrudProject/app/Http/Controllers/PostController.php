@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        echo "I am in a index function";
+        
 
         $data = Post::latest()->paginate(2);
     
