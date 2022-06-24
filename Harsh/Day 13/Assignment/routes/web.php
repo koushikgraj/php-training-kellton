@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\GoodController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,18 +18,19 @@ use App\Http\Controllers\GoodController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('yaa', function () {
-    return view('add');
+Route::get('nav', function () {
+    return view('layout');
 });
 
-// Route::post('yaa',[UserController::class,'getdata']);
-// Route::get('add',[GoodController::class,'show']);
-// Route::get('delet/{id}',[GoodController::class,'delete']);
-// Route::get('edit/{id}',[GoodController::class,'showdata']);
-// Route::post('edit',[GoodController::class,'update']);
-Route::view('users','user');
-Route::view('hello','noaccess');
 
-
-
+Route::get('home', function () {
+    return view('home');
+});
+Route::post('contects',[ContectController::class,'get']);
+Route::get('contects', function () {
+    return view('contects');
+});
+Route::get('myprofile', function () {
+    return view('myprofile');
+});
 
