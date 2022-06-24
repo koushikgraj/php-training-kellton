@@ -43,7 +43,7 @@
             
             <h2 class="text-center text-white">Fill this Students Details form.</h2>
 
-            <form action="#" class="order">
+            <form action="index" method="get" class="order">
                
                     <legend>Students Details</legend>
                     <div class="order-label">Full Name</div>

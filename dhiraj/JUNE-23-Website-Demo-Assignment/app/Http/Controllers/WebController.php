@@ -35,7 +35,8 @@ class WebController extends Controller
      */
     public function store()
     {
-        return view("myprofile");
+        echo "im in store method";
+        return view("contactUs");
     }
 
     /**

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WebController;
+use App\Http\Controllers\MyController;
+use App\Http\Models\MyMod;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +15,11 @@ use App\Http\Controllers\WebController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
-Route::get('/home',[WebController::class,'index']);
-Route::get('/contact',[WebController::class,'contactUs']);
-Route::get('/store',[WebController::class,'store']);
-
+Route::get('home',[MyController::class,'home']);
+Route::get('about',[MyController::class,'about']);
+Route::get('contact',[MyController::class,'contact']);
+Route::get('myprofile',[MyController::class,'myprofile']);
+Route::post("store", [MyController::class,'store']);
 
