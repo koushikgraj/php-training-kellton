@@ -1,0 +1,1 @@
+<h1>This is view with name user@index.</h1>

@@ -1,6 +1,7 @@
 <?php
-
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImplicitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/viren',function(){
+    return view("viren");
+});
+
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
+
+Route::get('/sports.com',function(){
+    return "Dhoni i love bro";
+});
+
+Route::get('/Controller',[ImplicitController::class,'getIndex']);
+
+
