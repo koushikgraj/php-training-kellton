@@ -34,7 +34,7 @@ class FirstController extends Controller
     }
     public function updateSubjects()
     {
-        name::where('id', 1)->update('name'-> 'History');
+        name::where('id', 1)->update('name'->'History');
         echo "subject updated successfully";
     }
 
