@@ -88,6 +88,6 @@ if(isset($_POST['submitbtn'])){
 	</div>
 
 		<br>
-		<a href="list.php">Got to student list</a>
+		<a href="signin.php">Got to student list</a>
 	</body>
 </html>
