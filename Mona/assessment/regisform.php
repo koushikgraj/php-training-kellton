@@ -16,12 +16,13 @@ if(isset($_POST['submitbtn'])){
 	$email = mysqli_real_escape_string($conn, $_POST['Email']);
 	$age = mysqli_real_escape_string($conn, $_POST['Password']);
 	$password = mysqli_real_escape_string($conn, $_POST['DOB']);
+	$gender = mysqli_real_escape_string($conn, $_POST['Gender']);
 	
 	$sql = "INSERT INTO registration 
-				( Username,Email, Password, DOB)
-				VALUES ( '$Username', '$Email', '$Password', '$DOB');";
+				( Username,Email, Password, DOB,Gender)
+				VALUES ( '$Username', '$Email', '$Password', '$DOB','$Gender');";
 	$qry = mysqli_query($conn, $sql);
-	echo "<script>location.replace('login.php?action=add&status=success');</script>";
+	echo "<script>location.replace('signin.php?action=add&status=success');</script>";
 }
 ?>
 <html>
