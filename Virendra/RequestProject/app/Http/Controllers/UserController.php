@@ -3,38 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\users;
 
 use App\Http\Controllers\UserController;
 
-class UserController extends Controller
-{
+class UserController extends Controller{
+    function testRequest(Request $request){
 
-
-     /**
-     * Store a new user.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-        dump($request->input());
-        $name = $request->input('name');
-        dump($request->input('last_name'));
- 
-      
+    dump($request->input());
+     return $name = $request->input('name');
+    return $input = $request->collect();
+    return $input = $request->all();
+   return dump($name = $request->input('name', 'Sally'));
+    return dump($name = $request->query('name'));
+   return dump($name = $request->input('user.name'));
+  return dump($input = $request->only('user', 'password'));
     }
 
-    /**
-     * Update the specified user.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 }

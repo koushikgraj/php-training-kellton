@@ -15,16 +15,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+         return view('welcome');
+ });
 
-Route::get('/', function (Request $request) {
-    
-});
-
-Route::put('/user/{id}', [UserController::class, 'update']);
-
-if ($request->is('admin/*')) {
-    //
-}
+Route::get('/users',[userController::class,'testRequest']);
+Route::view("login",'users');
