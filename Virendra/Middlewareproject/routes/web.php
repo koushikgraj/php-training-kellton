@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::middleware([CheckStatus::class])->group(function(){
+
+    Route::get('dky', [MyController::class,'home']);
+
+});
