@@ -1,6 +1,13 @@
 @extends('posts.layout')
  
 @section('content')
+
+<?php 
+   echo Form::label('email', 'E-Mail Address');
+
+   echo Form::text('username');
+   ?>   
+
     <div class="row" style="margin-top: 5rem;">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -48,5 +55,6 @@
         </tr>
         @endforeach
     </table>  
-    {!! $data->links() !!}      
+ 
+    
 @endsection
