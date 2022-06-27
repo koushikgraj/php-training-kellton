@@ -32,4 +32,14 @@ class HomeController extends Controller
     //     Home::create($input);
     //     return redirect('home')->with('flash_message', 'Student Addedd!');  
     // }
+
+    function contact()
+    {
+        return view('contact');
+    }
+
+    function about()
+    {
+        return view('about');
+    }
 }
