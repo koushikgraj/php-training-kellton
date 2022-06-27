@@ -91,6 +91,11 @@ class PostController extends Controller
             'title' => 'required',
             'description' => 'required',
         ]);
+
+        if($request->name != $old->name)
+        {
+            Log::debug("$admin_user_name changed the name of $old->name to $request->name on $date. And the IP is $ip");
+        }
     
         $post->update($request->all());
     
