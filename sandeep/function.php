@@ -1,13 +1,16 @@
-<?php
-class addition{
-var $a;
-var $b;
-function sum(){
-echo $this->a+$this->b;
-}
-}
-$obj=new addition();
-$obj->a=20;
-$obj->b=30;
-$obj->sum();
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="site.php" method="post">
+    <label>firstname</label><br>
+    <input type="text" name="name" placeholder="type name">
+</form>
+  
+</body>
+</html>

@@ -21,7 +21,7 @@
         <h1 style="color:red;">WINGS OF FIRE</h1>
         <h3>Home</h3>
         <legend align="center" >
-        <form action="home" method="POST">
+        <form action="" method="POST">
             @csrf
             <fieldset style="color:blue;">
                 <Address>

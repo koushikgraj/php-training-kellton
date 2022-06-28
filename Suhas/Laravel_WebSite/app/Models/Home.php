@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Home extends Model
 {
     use HasFactory;
-   public $timestamps = false;
+   //public $timestamps = false;
    public $table = 'homes';
 
    protected $fillable=[

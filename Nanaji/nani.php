@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-image: url("ravi.jpg");
+    }
+</style>    
 <body>
     <?php
     echo "<h1> my name is Nanaji </h1>";
