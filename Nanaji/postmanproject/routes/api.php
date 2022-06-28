@@ -18,6 +18,6 @@ use App\Http\Controllers\API\ProductController;
 */
   
 Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [RegisterController::class, 'login']);
+Route::post('login', [BaseController::class, 'login']);
      
 Route::resource('products', ProductController::class);
