@@ -23,9 +23,9 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -61,16 +61,14 @@ $app->singleton(
 
 $app->configure('app');
 
-/*
-|--------------------------------------------------------------------------
-| Register Middleware
+
+/*| Register Middleware
 |--------------------------------------------------------------------------
 |
 | Next, we will register the middleware with the application. These can
 | be global middleware that run before and after each request into a
 | route or middleware that'll be assigned to some specific routes.
 |
-*/
 
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
@@ -80,7 +78,6 @@ $app->configure('app');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
-/*
 |--------------------------------------------------------------------------
 | Register Service Providers
 |--------------------------------------------------------------------------
@@ -89,11 +86,10 @@ $app->configure('app');
 | are used to bind services into the container. Service providers are
 | totally optional, so you are not required to uncomment this line.
 |
-*/
-
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

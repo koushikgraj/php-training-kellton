@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use  App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Contracts\Encryption\DecryptException;
 use App\Exceptions\CustomException;
 use App\Exceptions\SampleException;
-use Illuminate\Support\Facades\Log;
+use  App\Models\User;
+
 
 
 
@@ -86,7 +87,7 @@ class AuthController extends Controller{
 
         try {
             if($request->method() != 'POST'){
-                Log::notice("User is trying to access get method in AuthController::testExeception();");
+                Log::notice("User is trying to access get method in ExceptionController::testExeception();");
               throw new SampleException();  
             }else{
                 echo "We are accessing post method";
