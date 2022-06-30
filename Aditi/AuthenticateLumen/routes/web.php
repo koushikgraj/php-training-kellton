@@ -21,6 +21,10 @@ $router->get('/version', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/key', function() {
+    return \Illuminate\Support\Str::random(32);
+});
+
 Route::group([
 
     'prefix' => 'api'
@@ -30,6 +34,8 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('user-profile', 'AuthController@me');
+    Route::post('data', 'AuthController@storeSecret'); //for encyption nd decryption
+    Route::post('exce', 'AuthController@context');   //for exception
 
 });
 

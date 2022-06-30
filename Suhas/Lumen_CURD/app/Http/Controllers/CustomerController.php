@@ -38,7 +38,6 @@ class CustomerController extends Controller
         $rules =  array(
             'name'    => 'required'
         );
-        //$customer_name = $parameters['name'];
         $messages = array(
             'name.required' => 'name is required.'
         );
