@@ -19,6 +19,7 @@ $router->get('/', function () use ($router) {
 
 // $router->post('/post/create', 'PostController@store');
 
+
 $router->group(["prefix" => "api"], function () use ($router) {
     $router->post('/post/create', 'PostController@store');
 
@@ -27,4 +28,13 @@ $router->group(["prefix" => "api"], function () use ($router) {
     $router->put('/post/update/{id}', 'PostController@update');
 
     $router->delete('/post/delete/{id}', 'PostController@destroy');
+});
+// $router->post('/api/login', 'AuthController@login');
+
+
+$router->group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    $router->post('/api/login', 'AuthController@login');
 });
