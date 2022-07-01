@@ -28,7 +28,7 @@
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                    <div class="mt-3">
+                    <div class="mt-6">
                       <h4>Garide Nanaji</h4>
                       <p class="text-secondary mb-1">Lamp Stack Developer</p>
                       <p class="text-muted font-size-sm">Kelltontech Solution limited</p>
