@@ -1,0 +1,15 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.0
+  - 7.1
+
+services:
+  - rabbitmq
+
+before_script:
+  - COMPOSER_DISCARD_CHANGES=1 composer update --prefer-dist --no-interaction --no-suggest
+script:
+  - composer test

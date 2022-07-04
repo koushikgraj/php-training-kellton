@@ -8,9 +8,7 @@
 </head>
 <body>
   <form action="site.php" method="post">
-    <label>firstname</label><br>
-    <input type="text" name="name" placeholder="type name">
-</form>
-  
+    <img src="C:\Users\sande\OneDrive\Pictures\WhatsApp Image 2022-06-24 at 4.47.28 PM.jpeg">
+  </form>
 </body>
 </html>
