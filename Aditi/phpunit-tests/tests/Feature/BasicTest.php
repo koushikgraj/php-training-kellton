@@ -20,9 +20,9 @@ class BasicTest extends TestCase
      */
     public function testBoxContents()
     {
-        $box = new Box(['toy']);
-        $this->assertTrue($box->has('toy')); //here if we write false instead of true
-        $this->assertFalse($box->has('ball')); //then it shows Tests: 3, Assertions: 4, Failures: 1.
+        $box = new Box(['toy', 'torch', 'ball', 'cat', 'tissue']);
+        $this->assertTrue($box->has('toy1'),'there are some values'); //here if we write false instead of true here if we change anything then it shows some error
+        $this->assertFalse($box->has('ball')); //then it shows Tests: 7, Assertions: 17, Failures: 1.
     }
 
 

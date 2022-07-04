@@ -16,8 +16,8 @@ class AlphaTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/alpha')
-                    ->assertSee('Alpha')
+            $browser->visit('/gamma')
+                    ->assertSee('Aditi')
                     ->clickLink('Next')
                     ->assertPathIs('/beta');
         });

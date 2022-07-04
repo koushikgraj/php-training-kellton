@@ -18,7 +18,7 @@ class AlphaTest extends TestCase
         $response = $this->get('/alpha');
 
         $response->assertStatus(200);
-        $response->assertSee('Alpha');
+        $response->assertSee('Aditi'); //see content of the page
         $response->assertDontSee('Beta');
     }
 }
