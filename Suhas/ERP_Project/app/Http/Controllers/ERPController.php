@@ -63,11 +63,15 @@ class ERPController extends Controller
         $this->validate($request, [
             'username' => 'required|string',
             'password' => 'required|string',
-        ]);
+        ]); 
 
       $user =  Login::where('username','=',$request->username)->where('password','=',$request->password)->first();
       if(!empty($user)){
         Session::put('user',$user);
+        Session::put('user_id',$user);
+        $is_manager_user = Detail::where('manager_id','=',Session::get('user_id'))->count();
+        Session::put('is_manager',$is_manager_user>0?true:false);
+
         return redirect('ex');
 
     } else{

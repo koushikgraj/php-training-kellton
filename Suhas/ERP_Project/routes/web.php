@@ -31,7 +31,7 @@ Route::get('login',[ERPController::class , 'loginUser']);
 Route::get('ex', function () {
     return view('executivedashboard');
 });
-Route::get('dash', function () {
+Route::get('dash', function () {    
     return view('dashboard');
 });
 
