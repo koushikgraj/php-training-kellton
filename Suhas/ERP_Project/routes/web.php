@@ -34,3 +34,6 @@ Route::get('ex', function () {
 Route::get('dash', function () {
     return view('dashboard');
 });
+
+Route::get('logout',[ERPController::class , 'logoutUser']);
+Route::get('get',[ERPController::class , 'getUser']);

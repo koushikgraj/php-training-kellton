@@ -28,8 +28,6 @@
 </head>
 <body>
 
-<center><h2>DASHBOARD</h2></center>
-
 <div class="row">
   <div class="column" style="background-color:black; border: 5px solid grey;">
  <justify><a href="layout"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Home</h2></a></justify>
@@ -37,7 +35,15 @@
     <p></p>
   </div>
   <div class="column" style="background-color:black; border: 5px solid grey; ">
- <a href="My Profile"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Profile</h2></a>
+ <a href="get"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Profile</h2></a>
+    <p></p>
+  </div>
+  <div class="column" style="background-color:black; border: 5px solid grey; ">
+ <a href="add"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Add User</h2></a>
+    <p></p>
+  </div>
+  <div class="column" style="background-color:black; border: 5px solid grey; ">
+ <a href="add"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Update User Profile</h2></a>
     <p></p>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +29,11 @@ class ERPController extends Controller
         //    'year'=>'required'
 
         // ]);
-  
+      //  dd(Session::get('user'));
+
+        if(Session::exists('user')) {
+            //do your logic
+
         $data = new Detail;
         $data->name=$req->name;
         $data->email=$req->email;
@@ -48,36 +52,60 @@ class ERPController extends Controller
 
         $data->save();
         return redirect('layout');
-    
+    } else {
+        echo "you are not autherised user";
+    }
 
      }
 
     public function login(Request $request)
     {
-        //dd($request);
-
         $this->validate($request, [
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
       $user =  Login::where('username','=',$request->username)->where('password','=',$request->password)->first();
-      dd($user);
-      return redirect('add');
-        //echo "succefully logged";
+      if(!empty($user)){
+        Session::put('user',$user);
+        return redirect('ex');
+
+    } else{
+        echo "wrong user name or password";
+         }
+    
     }
 
-     
     public function loginUser()
      {
         return view('login');
      }
 
+     
      public function User()
      {
-        return view('add');
+        if(Session::exists('user')) {
+            //do your logic
+            return view('add');
+
+        } else {
+            echo "you are not autherised user";
+        }
      }
- 
+
+
+     public function logoutUser()
+     {
+        Session::flush();
+        Session::forget('user');
+        return redirect('login');
+     }
+
+     public function getUser()
+     {
+        $data = Detail::all();
+        return view('get', ['data'=>$data]);
+     }
 }
    //1st = compare username and password wih login table
    //2nd = if mismatch print error
