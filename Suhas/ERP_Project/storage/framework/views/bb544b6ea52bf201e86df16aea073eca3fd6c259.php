@@ -1,0 +1,127 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <form action="<?php echo e(url('add')); ?>" method="post">
+        <?php echo csrf_field(); ?>
+    <div class="container-fluid position-relative d-flex p-0">
+       <!-- Sign Up Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>User Details</h3>
+                            </a>
+                            
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="name"  placeholder="enter your name">
+                            <label for="floatingText">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" name="email"  placeholder="Enter E-mail">
+                            <label>Email</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="date" class="form-control" name="dob">
+                            <label >date-of-birth</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="number" class="form-control" name="adhar" placeholder="enter adhar number">
+                            <label>Adharcard number</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" name="city" placeholder="enter city name">
+                            <label>City</label>
+                        </div>
+                        
+       <label for="state">State</label><br>
+        <select id="state" name="state" style="width:300px;">
+          <option value="karnataka">Karnataka</option>
+          <option value="telangana">Telangana</option>
+          <option value="haryana">Haryana</option>
+          <option value="andhra pradesh">Andhra Pradesh</option>
+        </select><br><br>
+
+        <label for="country">Country</label>              
+        <select id="country" name="country" style="width:300px;">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="india">India</option>
+          <label for="country">Country</label>
+        </select><br><br>
+              
+                           <label for="floatingPassword">Mobile Number</label>
+                            <input type="number" class="form-control" name="mobile" id="floatingPassword" placeholder="enter mobile number"><br><br>
+                            
+                       
+                        
+                        <label for="address" required>Address</label>
+                        <textarea id="adress" name="address" name="address" placeholder="enter address" style="height:50px"></textarea><br><br>
+                        
+                       
+                        <label for="address">Permant Addresss</label>
+                         <textarea id="permant_address" name="permant_address" placeholder="enter your address" style="width:400;"></textarea><br><br>
+                       
+                        
+                        <label>Martial Status</label><br>
+                        <input type="radio" name="marital_satus" id="unmarried"><label for="unmarried">unmarried</label>
+                        <input type="radio" name="marital_satus" id="married"><label for="married">married</label> <br><br>
+                      
+                        
+                        <label for="gender" >Gender</label><br>
+                        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+                        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+                        <input type="radio" name="gender" id="others"><label for="others">others</label><br><br>
+                       
+                        <label for="education">Education</label>              
+        <select id="education" name="education" required>
+          <option value="Electronics and Communication Engineering">Electronics And Communication Engineering</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Civil Engineering">Civil Engineering</option>
+          <option value="Computerscience Engineering">Computerscience Engineering</option>
+          <option value="Aerospace Engineering">Aerospace Engineering</option>
+        </select><br><br>
+                            
+                            <label for="floatingText">Year</label>
+                            <input type="date" name="year" style="width:400px;">
+                            
+                      
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <a href="">Forgot Password</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Add New User</button>
+                        <p class="text-center mb-0">Already have an Account? <a href="">Sign In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign Up End -->
+    </div>
+
+
+</form>
+</body>
+
+</html>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Supoo\php-training-kellton\Suhas\ERP_Project\resources\views/add.blade.php ENDPATH**/ ?>
