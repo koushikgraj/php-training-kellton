@@ -130,7 +130,7 @@
       <div class="left-part">
         <!-- <i class="fas fa-hourglass-start"></i> -->
         <h1>YOU CAN APPLY  LEAVE FROM HERE</h1>
-        <!-- <p>W3docs provides free learning materials for programming languages like HTML, CSS, Java Script, PHP etc.</p> -->
+        
         
       </div>
       <form action="{{ url('store')}}"method="post">
@@ -140,18 +140,7 @@
           <h2>APPLY LEAVES</h2>
         </div>
         <div class="info">
-        <!-- <select>
-            <option value="course-type" selected>Leave type</option>
-            
-            <option value="short-courses">Sick Leave</option>
-            <option value="featured-courses">causal</option>
-            <option value="undergraduate">Undergraduate</option>
-            <option value="diploma">Diploma</option>
-            <option value="certificate">Certificate</option>
-            <option value="masters-degree">Masters degree</option>
-            <option value="postgraduate">Postgraduate</option>
-          </select> -->
-          
+
           USER-ID<input type="text" name="user">
           LEAVE-TYPE<select name="ltype" >
           <option value="earn leave">Earned Leave</option>

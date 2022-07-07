@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HR Portal</title>
+    <title>Management</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -31,11 +31,11 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> Aditi-->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> Replace-->
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!-- <link href="css/style.css" rel="stylesheet"> Aditi-->
+    <!-- <link href="css/style.css" rel="stylesheet"> Replace-->
 </head>
 
 <body>
@@ -226,7 +226,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('js/main.js') }}"></script>
-    <!-- <script src="js/main.js"></script> aditi-->
+    <!-- <script src="js/main.js"></script> Replace-->
 </body>
 
 </html>
