@@ -8,24 +8,18 @@
 * {
   box-sizing: border-box;
 }
-
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 50%;
   padding: 80px;
 }
-
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
-
-
-
 </style>
 </head>
 <body>
@@ -58,24 +52,20 @@
 <script>
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
-
 // Declare a loop variable
 var i;
-
 // List View
 function listView() {
   for (i = 0; i < elements.length; i++) {
     elements[i].style.width = "100%";
   }
 }
-
 // Grid View
 function gridView() {
   for (i = 0; i < elements.length; i++) {
     elements[i].style.width = "50%";
   }
 }
-
 /* Optional: Add active class to the current button (highlight it) */
 var container = document.getElementById("btnContainer");
 var btns = container.getElementsByClassName("btn");

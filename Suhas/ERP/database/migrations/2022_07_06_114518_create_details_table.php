@@ -25,9 +25,10 @@ return new class extends Migration
             $table->string('mobile');
             $table->string('address');
             $table->string('permant_address');
-            $table->string('marital_satus');
-
-
+            $table->string('marital_status');
+            $table->string('gender');
+            $table->string('education');
+            $table->date('year');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ERPController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::get('layout', function () {
 
 Route::post('add',[ERPController::class,'addUser']);
 Route::get('add',[ERPController::class , 'User']);
+Route::get('update',[ERPController::class , 'edit']);
+
 
 Route::post('login',[ERPController::class , 'login']);
 Route::get('login',[ERPController::class , 'loginUser']);
@@ -35,5 +38,13 @@ Route::get('dash', function () {
     return view('dashboard');
 });
 
+Route::get('myprofile', function () {    
+    return view('get');
+});
+
+
+
 Route::get('logout',[ERPController::class , 'logoutUser']);
 Route::get('get',[ERPController::class , 'getUser']);
+Route::resource('update',ERPController::class);
+

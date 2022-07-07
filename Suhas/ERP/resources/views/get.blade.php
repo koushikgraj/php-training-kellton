@@ -1,7 +1,28 @@
 @extends('layout')
 @section('content')
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
 <h1>User Profile</h1>
-<table border= "1"> 
+<table> 
 
 <tr><td>Name</td>
 <td>E-mail</td>
@@ -17,6 +38,7 @@
 <td>gender</td>
 <td>education</td>
 <td>year</td>
+<!-- <td>Action</td> -->
 
 </tr>
 @foreach($data as $d)
@@ -31,13 +53,18 @@
     <td>{{$d->mobile}}</td>
     <td>{{$d->address}}</td>
     <td>{{$d->permant_address}}</td>
-    <td>{{$d->marital_satus}}</td>
+    <td>{{$d->marital_status}}</td>
     <td>{{$d->gender}}</td>
     <td>{{$d->education}}</td>
     <td>{{$d->year}}</td>
-
+<!-- <td>
+     <a href="update/{id}" class="btn btn-info btn-sm">Modify</a> 
+</td> -->
 </tr>
 @endforeach
 </table>
+</body>
+</html>
+
 
 @endsection

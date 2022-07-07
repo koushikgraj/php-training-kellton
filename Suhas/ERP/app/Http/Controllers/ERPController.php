@@ -33,7 +33,6 @@ class ERPController extends Controller
 
         if(Session::exists('user')) {
             //do your logic
-
         $data = new Detail;
         $data->name=$req->name;
         $data->email=$req->email;
@@ -45,7 +44,7 @@ class ERPController extends Controller
         $data->mobile=$req->mobile;
         $data->address=$req->address;
         $data->permant_address=$req->permant_address;
-        $data->marital_satus=$req->marital_satus;
+        $data->marital_status=$req->marital_status;
         $data->gender=$req->gender;
         $data->education=$req->education;
         $data->year=$req->year;
@@ -110,10 +109,53 @@ class ERPController extends Controller
         $data = Detail::all();
         return view('get', ['data'=>$data]);
      }
+
+     public function edit()
+     {
+        $data =Detail::find($id);
+        return view('update/{id}',['data'=>$data]);
+     }
+     
+     public function modify(Request $request, $id)
+    {
+        $request->validate([
+            'name'=>'required',
+                'email'=>'required',
+               'dob'=>'required',
+                'city'=>'required',
+                'state'=>'required',
+               'country'=>'required',
+                'mobile'=>'required',
+                'address'=>'required',
+               'permant_address'=>'required',
+                'marital_satus'=>'required',
+                'gender'=>'required',
+                'education'=>'required',
+                'year'=>'required'
+        ]);
+        
+        $data =Detail::find($id);
+        
+        $data->name=$request->name;
+        $data->email=$requset->email;
+        $data->dob=$request->dob;
+        $data->adhar=$request->adhar;
+        $data->city=$request->city;
+        $data->state=$request->state;
+        $data->country=$request->country;
+        $data->mobile=$request->mobile;
+        $data->address=$request->address;
+        $data->permant_address=$request->permant_address;
+        $data->marital_satus=$request->marital_satus;
+        $data->gender=$request->gender;
+        $data->education=$request->education;
+        $data->year=$request->year;
+        $data->save();
+        return redirect('get')->with('msg', 'updated successfully');
+}
 }
    //1st = compare username and password wih login table
    //2nd = if mismatch print error
    //3rd = if login matches set user info in session variable redirect to dashboard
    // ......$request->session()->put('key', 'value');....use Illuminate\Support\Facades\Session;
  // Session::set('variableName', $value); 
-

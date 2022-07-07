@@ -1,5 +1,5 @@
-
-<?php $__env->startSection('content'); ?>
+@extends('layout')
+@section('content')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <form action="<?php echo e(url('add')); ?>" method="post">
-        <?php echo csrf_field(); ?>
+    <form action="{{ url('add')}}" method="post">
+        @csrf
     <div class="container-fluid position-relative d-flex p-0">
        <!-- Sign Up Start -->
         <div class="container-fluid">
@@ -51,15 +51,16 @@
                         </div>
                         
        <label for="state">State</label><br>
-        <select id="state" name="state" style="width:300px;">
+          <select id="state" name="state" style="width:300px;">
           <option value="karnataka">Karnataka</option>
+          <option value="karnataka">Maharashtra</option>
           <option value="telangana">Telangana</option>
           <option value="haryana">Haryana</option>
           <option value="andhra pradesh">Andhra Pradesh</option>
         </select><br><br>
 
         <label for="country">Country</label>              
-        <select id="country" name="country" style="width:300px;">
+          <select id="country" name="country" style="width:300px;">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="india">India</option>
@@ -80,14 +81,14 @@
                        
                         
                         <label>Martial Status</label><br>
-                        <input type="radio" name="marital_satus" id="unmarried"><label for="unmarried">unmarried</label>
-                        <input type="radio" name="marital_satus" id="married"><label for="married">married</label> <br><br>
+                        <input type="radio" name="marital_status" value="married" id="married"><label for="married">married</label>
+                        <input type="radio" name="marital_status" value="unmarried" id="unmarried"><label for="unmarried">unmarried</label> <br><br>
                       
                         
                         <label for="gender" >Gender</label><br>
-                        <input type="radio" name="gender" id="male"><label for="male">Male</label>
-                        <input type="radio" name="gender" id="female"><label for="female">Female</label>
-                        <input type="radio" name="gender" id="others"><label for="others">others</label><br><br>
+                        <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
+                        <input type="radio" name="gender" value= "female" id="female"><label for="female">Female</label>
+                        <input type="radio" name="gender" value="others" id="others"><label for="others">others</label><br><br>
                        
                         <label for="education">Education</label>              
         <select id="education" name="education" required>
@@ -117,5 +118,4 @@
 </body>
 
 </html>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Supoo\php-training-kellton\Suhas\ERP_Project\resources\views/add.blade.php ENDPATH**/ ?>
+@endsection

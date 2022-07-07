@@ -1,5 +1,3 @@
-
-
 //<p style="color:white;"> Therre is some sample content.</p>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,4 +96,3 @@
 </body>
 
 </html>
-
