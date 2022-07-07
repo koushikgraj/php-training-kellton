@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ERPController;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('layout', function () {
     return view('layout');
 });
 
-Route::get('sample', function () {
-    return view('sample');
+
+Route::post('add',[ERPController::class,'addUser']);
+Route::get('add',[ERPController::class , 'User']);
+Route::get('update',[ERPController::class , 'edit']);
+
+
+Route::post('login',[ERPController::class , 'login']);
+Route::get('login',[ERPController::class , 'loginUser']);
+
+Route::get('ex', function () {
+    if(Session::exists('user')) {
+        return view('executivedashboard');
+    }else{
+        return view('not_authorized');
+    }
 });
+Route::get('dash', function () {    
+    return view('dashboard');
+});
+
+Route::get('myprofile', function () {    
+    return view('get');
+});
+
+
+
+Route::get('logout',[ERPController::class , 'logoutUser']);
+Route::get('get',[ERPController::class , 'getUser']);
+

@@ -101,6 +101,10 @@ $app->register(App\Providers\AuthServiceProvider::class);
 //---//5. add this line to use lumen JWT auth
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
+
+
+$app->register(App\Providers\SmsServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

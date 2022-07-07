@@ -39,6 +39,7 @@ class AuthController extends Controller
             throw new SampleException();
         }
 
+        //Log::pushHandler(storage_path().'/logs/'.date('Y-m-d H:i:s').'koushik-of-log.log');
         $message = "Testing different type of Laravel/Lumen logs";
         Log::emergency($message);
         Log::alert($message);

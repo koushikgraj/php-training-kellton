@@ -58,12 +58,19 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
+                        <h6 class="mb-0">SUHAS</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="ex" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>User Profile</a>
+
+
+                    @if(session('is_manager') =='1')
+                        <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Approve Leave</a>
+                    @endif
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Attendance</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -72,7 +79,7 @@
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
-
+                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave </a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -174,7 +181,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="{{url('logout')}}" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>

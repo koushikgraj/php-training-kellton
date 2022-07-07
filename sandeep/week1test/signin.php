@@ -3,7 +3,7 @@ if(isset($_POST['submitbtn'])){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "mydetails";
+	$dbname = "kellton_test1";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);

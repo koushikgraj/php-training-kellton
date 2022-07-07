@@ -8,7 +8,7 @@ if (!empty($username) || !empty($password)|| !empty($email) || !empty($dob) || !
     $host='localhost';
     $dbusername='root';
     $dbpassword='';
-    $dbname='data';
+    $dbname='kellton_test1';
     $conn=new mysqli($host,$dbusername,$dbpassword,$dbname);
     if(mysqli_connect_error()){
         die('connect error('.mysqli_connect_errno().')'.mysqli_connect_error());

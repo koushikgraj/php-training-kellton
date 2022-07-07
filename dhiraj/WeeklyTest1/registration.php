@@ -3,9 +3,9 @@ if(isset($_POST['submit'])){
 $sn="localhost";
 $un="root";
 $ps="";
-// $dn="db";
+$dn="kellton_test1";
 
-$conn=mysqli_connect($sn,$un,$ps);
+$conn=mysqli_connect($sn,$un,$ps,$dn);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
