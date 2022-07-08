@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Detail;
 use App\Models\Login;
 use Crypt;
+use Illuminate\Support\Facades\Log;
 
 class ERPController extends Controller
 {
@@ -51,6 +52,18 @@ class ERPController extends Controller
         Session::put('user_id',$user->id);
         $is_manager_user = Detail::where('manager_id','=',$user->id)->count();
         Session::put('is_manager',$is_manager_user>0?true:false);
+
+
+        $message = "User '{$request->username}' logged in to ERP system.";
+        Log::emergency($message);
+        Log::alert($message);
+        Log::critical($message);
+        Log::error($message);
+        Log::warning($message);
+        Log::notice($message);
+        Log::info($message);
+        Log::debug($message);
+
         return redirect('ex');
 
     } else{

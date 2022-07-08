@@ -51,7 +51,7 @@
                         </div>
                         
        <label for="state">State</label><br>
-          <select id="state" name="state" style="width:300px;">
+          <select id="state"  class="form-control" name="state" style="width:300px;">
           <option value="karnataka">Karnataka</option>
           <option value="karnataka">Maharashtra</option>
           <option value="telangana">Telangana</option>
@@ -59,8 +59,8 @@
           <option value="andhra pradesh">Andhra Pradesh</option>
         </select><br><br>
 
-        <label for="country">Country</label>              
-          <select id="country" name="country" style="width:300px;">
+        <label for="country" class="form-control">Country</label>              
+          <select id="country"  class="form-control" name="country" style="width:300px;">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="india">India</option>
@@ -73,25 +73,25 @@
                        
                         
                         <label for="address" required>Address</label>
-                        <textarea id="adress" name="address" name="address" placeholder="enter address" style="height:50px"></textarea><br><br>
+                        <textarea id="adress" name="address" class="form-control" name="address" placeholder="enter address" style="height:50px"></textarea><br><br>
                         
                        
                         <label for="address">Permant Addresss</label>
-                         <textarea id="permant_address" name="permant_address" placeholder="enter your address" style="width:400;"></textarea><br><br>
+                         <textarea id="permant_address" class="form-control" name="permant_address" placeholder="enter your address" style="width:400;"></textarea><br><br>
                        
                         
                         <label>Martial Status</label><br>
-                        <input type="radio" name="marital_status" value="married" id="married"><label for="married">married</label>
-                        <input type="radio" name="marital_status" value="unmarried" id="unmarried"><label for="unmarried">unmarried</label> <br><br>
+                        <input type="radio" class="form-control" name="marital_status" value="married" id="married"><label for="married">married</label>
+                        <input type="radio" class="form-control" name="marital_status" value="unmarried" id="unmarried"><label for="unmarried">unmarried</label> <br><br>
                       
                         
                         <label for="gender" >Gender</label><br>
-                        <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
-                        <input type="radio" name="gender" value= "female" id="female"><label for="female">Female</label>
-                        <input type="radio" name="gender" value="others" id="others"><label for="others">others</label><br><br>
+                        <input type="radio" class="form-control" name="gender" value="male" id="male"><label for="male">Male</label>
+                        <input type="radio" class="form-control" name="gender" value= "female" id="female"><label for="female">Female</label>
+                        <input type="radio" class="form-control" name="gender" value="others" id="others"><label for="others">others</label><br><br>
                        
                         <label for="education">Education</label>              
-        <select id="education" name="education" required>
+        <select id="education" class="form-control" name="education" required>
           <option value="Electronics and Communication Engineering">Electronics And Communication Engineering</option>
           <option value="Mechanical Engineering">Mechanical Engineering</option>
           <option value="Civil Engineering">Civil Engineering</option>
@@ -100,7 +100,7 @@
         </select><br><br>
                             
         <label for="floatingText">Year</label>
-        <input type="date" name="year" style="width:300px;">
+        <input type="date" name="year" class="form-control" style="width:300px;">
         <br><br>
                             
                       
