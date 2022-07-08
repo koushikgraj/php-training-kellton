@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserModuleController;
 use App\Http\Controllers\ERPController;
 use App\Http\Controllers\TimesheetController;
+use App\Http\Controllers\AttendanceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -122,3 +123,13 @@ Route::post('/store-timesheet', [TimesheetController::class, 'store']);
 
 
 Route::get('get-timesheet', [TimesheetController::class, 'index']);
+
+
+Route::post('store-attendance', [AttendanceController::class, 'store']);
+Route::get('attendance',function(){
+    return view('attendance');
+});
+
+ Route::get('get-attendance',[AttendanceController::class,'index']);
+
+ Route::get('display-attendance',[AttendanceController::class,'show']);

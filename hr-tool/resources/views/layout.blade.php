@@ -77,7 +77,8 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ url('holiday') }}" class="dropdown-item">Hollydays</a>
                             <a href="{{ url('timesheet') }}" class="dropdown-item">Timesheet</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                             <a href="{{ url('attendance') }}" class="dropdown-item">Attendance</a>
+                            <a href="{{ url('display-attendance') }}" class="dropdown-item">Employee Attendance</a>
                         </div>
                     </div>
                     
