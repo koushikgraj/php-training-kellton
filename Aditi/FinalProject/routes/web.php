@@ -45,15 +45,14 @@ Route::get('login', function () {
 /*Route::get('ldetails', function () {
     return view('leave-details');
 });*/
-
+Route::post('adaction',[LoginController::class,'adaction']);
 
 Route::post('adlogin',[LoginController::class,'login']);
 Route::get('adlogin',[LoginController::class,'loginuser']);
 Route::get('admin',[LoginController::class,'show']);
 
-
 Route::get('details/{id}',[LoginController::class,'viewDetails']);
 
-// Route::get('details', function () {
-//   return view('view-details');
-// });
+Route::get('takeaction',[LoginController::class,'adaction']);
+
+//Route::get('actionad',[LoginController::class,'adaction']);

@@ -1,6 +1,8 @@
 @extends('layout')
 @section('content')
-<table border="1">
+<center>
+  <div class="create">
+<table border="5">
   
   <tr>
         <td>Id</td>
@@ -9,7 +11,7 @@
         <td>START-DATE</td>
         <td>END-DATE</td>
         <td>REASON</td>
-        
+        <td>ACTION</td>
     </tr>
     @foreach($leaves as $leave)
     <tr>
@@ -19,9 +21,12 @@
       <td>{{$leave->sdate}}</td>
       <td>{{$leave->edate}}</td>
       <td>{{$leave->reason}}</td>
+      <td>{{$leave->action}}</td>
     </tr>
     @endforeach
   </thead>
-
 </table>
+</div>
+</center>
+
 @endsection

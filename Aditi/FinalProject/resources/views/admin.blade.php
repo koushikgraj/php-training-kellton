@@ -9,8 +9,8 @@
       <th scope="col">TYPE</th>
       <th scope="col">START-DATE</th>
       <th scope="col">END-DATE</th>
-      <th scope="col">ACTION</th>
       <th scope="col">REASON</th>
+      <th scope="col">ACTION</th>
       <th scope="col">STATUS</th>
     </tr>
   </thead>
@@ -22,12 +22,9 @@
       <td>{{$leave->ltype}}</td>
       <td>{{$leave->sdate}}</td>
       <td>{{$leave->edate}}</td>
-      <td>{{$leave->action}}</td>
       <td>{{$leave->reason}}</td>
-      <td><a href="details/{{$leave->id}}">View Details</a>
-
-    </td>
-      
+      <td>{{$leave->action}}</td>
+      <td><a href="details/{{$leave->id}}">View Details</a></td>
     </tr>
     @endforeach
     
