@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ERPController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +24,27 @@ Route::get('layout', function () {
 Route::get('sample', function () {
     return view('sample');
 });
-Route::get('holiday', function () {
-    return view('holiday');
+
+// Route::get('holiday', function () {
+//     return view('holiday');
+// });
+Route::get('create', function () {
+    return view('createholiday');
 });
+
+Route::post('store', [ERPController::class, 'store']);
+Route::get('holiday', [ERPController::class, 'holiday']);
+
+Route::get('edit/{id}', [ERPController::class, 'edit']);
+Route::post('update/{id}', [ERPController::class, 'update']);
+
+// Route::get('delete/{id}', [ERPController::class, 'destroy']);
+
+// ## Update
+// Route::get('edit/{id}', 'ERPController@edit')->name('edit');
+// Route::post('update/{id}', 'ERPController@update')->name('update');
+
+// ## Delete
+// Route::get('delete/{id}', 'ERPController@destroy')->name('delete');
+
+Route::get('get', [ERPController::class, 'index']);

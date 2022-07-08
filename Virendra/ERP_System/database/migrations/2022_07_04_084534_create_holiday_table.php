@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('holiday', function (Blueprint $table) {
             $table->increments('id' );
+            $table->integer('no' );
             $table->string('month');
             $table->date('date');
             $table->string('day_of_the_week');
