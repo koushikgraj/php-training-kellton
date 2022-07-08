@@ -3,7 +3,7 @@ if(isset($_POST['submit'])){
 $sn="localhost";
 $un="root";
 $ps="";
-$dn="db";
+$dn="kellton_test1";
 
 $conn=mysqli_connect($sn,$un,$ps,$dn);
 

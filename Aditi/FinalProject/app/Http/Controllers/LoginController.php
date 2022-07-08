@@ -61,19 +61,20 @@ class LoginController extends Controller
 // for Admin view details
 
 function viewDetails($id){
-    //dd($leave);
-    // $leave=Leave::find($req->id);
-    // $leave->user=$req->user;
-    // $leave->ltype=$req->ltype;
-    // $leave->sdate=$req->sdate;
-    // $leave->edate=$req->edate;
-    // $leave->reason=$req->reason;
-    // $leave->save();
-   // return redirect('list');
    $data =Leave::find($id);
    return view('view-details',['leave'=>$data]);
-//    dd($data);
-//   Leave::find($id);
+
+}
+
+function adaction (Request $req){
+        // $leave= New Leave;
+        // //dd($req);
+        // $leave->action=$req->action;
+        // $leave->user=$req->user;
+        // $leave->save();
+        Leave::where('id', $req->id)->update(array('action' => $req->action));
+        return redirect('admin')->with('message','Action Added');
+
 }
 
  

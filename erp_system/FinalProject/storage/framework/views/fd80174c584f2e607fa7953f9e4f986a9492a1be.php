@@ -1,0 +1,2 @@
+<title>Access not granted</title>
+<img src="https://freefrontend.com/assets/img/403-forbidden-html-templates/html-access-not-granted.png"><?php /**PATH C:\wamp\www\training\kellton-taining\php-training-kellton\erp_system\FinalProject\resources\views/not_authorized.blade.php ENDPATH**/ ?>
