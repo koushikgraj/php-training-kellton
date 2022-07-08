@@ -12,7 +12,7 @@
 .column {
   float: left;
   width: 50%;
-  padding: 80px;
+  padding: 40px;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -29,23 +29,47 @@
 
 <div class="row">
   <div class="column" style="background-color: black; border: 5px solid grey;">
-  <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Messages</h2>
+  <style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+  <img src="message.jpeg" style="width:60%"  class="center">
+  
+<center>
+  <h2 class="text-primary" ><i class="fa fa-laptop me-2" text-align:  center ></i>Messages</h2>
     <p>Mesages found(0)</p>
   </div>
+</center>
   <div class="column" style="background-color:black; border: 5px solid grey;">
-  <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Notifications</h2>
+ 
+  <img src="notifications.jpeg" style="width:40%"  class="center">
+  <center>
+  <h2 class="text-primary"><i class="fa fa-laptop me-2"></i>Notifications</h2>
     <p>No Notifications found</p>
   </div>
+</center>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:black; border: 5px solid grey;">
-  <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Reminders</h2>
+  
+  <img src="reminder.jpeg" style="width:50%"  class="center">
+  <center>
+  <h2 class="text-primary"><i class="fa fa-laptop me-2"></i>Reminders</h2>
     <p>Reminders(0)</p>
+</center>
   </div>
   <div class="column" style="background-color:black; border: 5px solid grey;">
-  <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Reports</h2>
+  <img src="reports.jpeg" style="width:50%"  class="center">
+  <center>
+  <h2 class="text-primary"><i class="fa fa-laptop me-2"></i>Reports</h2>
+  
     <p>No recent reports found </p>
+</center>
   </div>
 </div>
 

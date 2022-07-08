@@ -28,21 +28,44 @@
 
 <div class="row">
   <div class="column" style="background-color:black; border: 5px solid grey;">
+  <style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+  <img src="home.jpeg" style="width:30%;"  class="center">
+  
+
+  <center>
  <justify><a href="layout"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Home</h2></a></justify>
   
-    <p></p>
+</center>
   </div>
+  @if(session('is_manager') =='1')
   <div class="column" style="background-color:black; border: 5px solid grey; ">
- <a href="get"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Profile</h2></a>
-    <p></p>
+  <img src="users.jpeg" style="width:40% ; "  class="center">
+  
+<center>
+ <a href="get"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>All User Profile</h2></a>
+</center>
   </div>
+
   <div class="column" style="background-color:black; border: 5px solid grey; ">
+  <img src="adduser.jpeg" style="width:30% ;"  class="center">
+  
+  <center>
  <a href="add"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Add User</h2></a>
-    <p></p>
+</center>
   </div>
+  @endif
   <div class="column" style="background-color:black; border: 5px solid grey; ">
- <a href="update"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Update User Profile</h2></a>
-    <p></p>
+  <img src="alluser.jpeg" style="width:30% ;"  class="center">
+  
+  <center>
+ <a href="update"> <h2 class="text-primary"><i class="fa fa-user-edit me-2"></i>Update My Profile</h2></a>
+</center>
   </div>
 </div>
 

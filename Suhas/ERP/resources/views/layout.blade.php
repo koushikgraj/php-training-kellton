@@ -66,6 +66,11 @@
                     <a href="ex" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>User Profile</a>
 
+
+                    @if(session('is_manager') =='0')
+                        <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Approve Leave</a>
+                    @endif
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Attendance</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -170,7 +175,7 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="img/me.png" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">HR Management</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">

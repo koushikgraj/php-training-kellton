@@ -46,12 +46,12 @@
                             <label>Adharcard number</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" name="city" placeholder="enter city name">
+                            <input type="text" class="form-control" name="city" style="width:350px;background:black;" placeholder="enter city name">
                             <label>City</label>
                         </div>
                         
        <label for="state">State</label><br>
-          <select id="state" name="state" style="width:300px;">
+          <select id="state" class="form-control" name="state" style="width:350px;background:black;">
           <option value="karnataka">Karnataka</option>
           <option value="karnataka">Maharashtra</option>
           <option value="telangana">Telangana</option>
@@ -60,38 +60,34 @@
         </select><br><br>
 
         <label for="country">Country</label>              
-          <select id="country" name="country" style="width:300px;">
+          <select id="country" class="form-control" name="country"  style="width:350px;background:black;">
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="india">India</option>
           <label for="country">Country</label>
         </select><br><br>
               
-                           <label for="floatingPassword">Mobile Number</label>
-                            <input type="number" class="form-control" name="mobile" id="floatingPassword" placeholder="enter mobile number"><br><br>
+          <label for="floatingPassword">Mobile Number</label>
+           <input type="number" class="form-control" name="mobile" id="floatingPassword" placeholder="enter mobile number"><br><br>
                             
-                       
+          <label for="address" required>Address</label><br>
+            <textarea id="adress" class="form-control" name="address" name="address" placeholder="enter address" style="height:50px;width:350px;background:black"></textarea><br><br>
                         
-                        <label for="address" required>Address</label>
-                        <textarea id="adress" name="address" name="address" placeholder="enter address" style="height:50px"></textarea><br><br>
-                        
+           <label for="address">Permant Addresss</label><br>
+              <textarea id="permant_address" class="form-control" name="permant_address" placeholder="enter your address" style="height:50px;width:350px;background:black"></textarea><br><br>
                        
-                        <label for="address">Permant Addresss</label>
-                         <textarea id="permant_address" name="permant_address" placeholder="enter your address" style="width:400;"></textarea><br><br>
-                       
-                        
-                        <label>Martial Status</label><br>
-                        <input type="radio" name="marital_status" value="married" id="married"><label for="married">married</label>
-                        <input type="radio" name="marital_status" value="unmarried" id="unmarried"><label for="unmarried">unmarried</label> <br><br>
+            <label>Martial Status</label><br>
+               <input type="radio"  name="marital_status" value="married" id="married"><label for="married">married</label> &nbsp; &nbsp; &nbsp;
+                <input type="radio"  name="marital_status" value="unmarried" id="unmarried"><label for="unmarried">unmarried</label> <br><br>
                       
                         
                         <label for="gender" >Gender</label><br>
-                        <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
-                        <input type="radio" name="gender" value= "female" id="female"><label for="female">Female</label>
+                        <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>&nbsp; &nbsp; &nbsp;
+                        <input type="radio" name="gender" value= "female" id="female"><label for="female">Female</label>&nbsp; &nbsp; &nbsp;
                         <input type="radio" name="gender" value="others" id="others"><label for="others">others</label><br><br>
                        
-                        <label for="education">Education</label>              
-        <select id="education" name="education" required>
+          <label for="education">Education</label>              
+          <select id="education" class="form-control" name="education" style="height:50px;width:350px;background:black" required>
           <option value="Electronics and Communication Engineering">Electronics And Communication Engineering</option>
           <option value="Mechanical Engineering">Mechanical Engineering</option>
           <option value="Civil Engineering">Civil Engineering</option>
@@ -100,7 +96,7 @@
         </select><br><br>
                             
         <label for="floatingText">Year</label>
-        <input type="date" name="year" style="width:300px;">
+        <input type="date" class="form-control" name="year" style="width:350px;background:black;">
         <br><br>
                             
                       

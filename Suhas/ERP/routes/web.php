@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ERPController;
+use App\Http\Controllers\UserModuleController;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\ERPController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('layout', function () {
@@ -23,16 +24,20 @@ Route::get('layout', function () {
 });
 
 
-Route::post('add',[ERPController::class,'addUser']);
-Route::get('add',[ERPController::class , 'User']);
-Route::get('update',[ERPController::class , 'edit']);
+Route::post('add',[UserModuleController::class,'addUser']);
+Route::get('add',[UserModuleController::class , 'User']);
+Route::post('update',[UserModuleController::class , 'update']);
 
 
-Route::post('login',[ERPController::class , 'login']);
-Route::get('login',[ERPController::class , 'loginUser']);
+Route::post('login',[UserModuleController::class , 'login']);
+Route::get('login',[UserModuleController::class , 'loginUser']);
 
 Route::get('ex', function () {
-    return view('executivedashboard');
+    if(Session::exists('user')) {
+        return view('executivedashboard');
+    }else{
+        return view('not_authorized');
+    }
 });
 Route::get('dash', function () {    
     return view('dashboard');
@@ -44,7 +49,5 @@ Route::get('myprofile', function () {
 
 
 
-Route::get('logout',[ERPController::class , 'logoutUser']);
-Route::get('get',[ERPController::class , 'getUser']);
-Route::resource('update',ERPController::class);
-
+Route::get('logout',[UserModuleController::class , 'logoutUser']);
+Route::get('get',[UserModuleController::class , 'getUser']);

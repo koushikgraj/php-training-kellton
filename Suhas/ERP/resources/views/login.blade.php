@@ -73,14 +73,14 @@
                                 @enderror
                             </span>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
+                        <!--<div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             </div>
                             <a href="">Forgot Password</a>
-                        </div>
+                        </div>-->
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
-                        <p class="text-center mb-0">Don't have an Account? <a href=""></a></p>
+                        <!--<p class="text-center mb-0">Don't have an Account? <a href=""></a></p>-->
                     </div>
                 </div>
             </div>
