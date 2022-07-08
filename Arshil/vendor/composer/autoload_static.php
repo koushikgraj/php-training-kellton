@@ -75,6 +75,7 @@ class ComposerStaticInit7644fce9226456591de46465f3294ae5
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'Predis\\' => 7,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
         'O' => 
@@ -268,6 +269,10 @@ class ComposerStaticInit7644fce9226456591de46465f3294ae5
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (

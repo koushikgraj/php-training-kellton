@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AttendanceModel;
 
-class ERPController extends Controller
+class AttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.

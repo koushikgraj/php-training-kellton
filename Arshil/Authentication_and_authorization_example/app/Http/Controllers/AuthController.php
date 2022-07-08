@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use  App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthController extends Controller
 {
@@ -12,7 +13,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'refresh', 'logout']]);
+        $this->middleware('auth:api', ['except' => ['login', 'refresh', 'logout','storeSecret']]);
     }
     /**
      * Get a JWT via given credentials.
@@ -45,6 +46,14 @@ class AuthController extends Controller
     public function me()
     {
         return response()->json(auth()->user());
+     //echo "Arshil";
+    }
+
+
+    public function abc()
+    {
+        return response()->json(auth()->user());
+     //echo "Arshil";
     }
 
     /**
@@ -84,5 +93,17 @@ class AuthController extends Controller
             'user' => auth()->user(),
             'expires_in' => auth()->factory()->getTTL() * 60 * 24
         ]);
+    }
+    public function storeSecret()
+    {
+ 
+        $name = "Arshil";
+        $encrypted_name = Crypt::encrypt($name);
+        echo $encrypted_name;
+
+        echo "<br>";
+        $decrypted_name = Crypt::decrypt($encrypted_name);
+        echo $decrypted_name;
+
     }
 }

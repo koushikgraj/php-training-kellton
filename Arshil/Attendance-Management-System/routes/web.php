@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ERPController;
+use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ Route::get('home', function () {
     return view('layout');
 });
 
-Route::post('store', [ERPController::class, 'store']);
+Route::post('store', [AttendanceController::class, 'store']);
 Route::get('attendance',function(){
     return view('attendance');
 });
@@ -31,7 +31,7 @@ Route::get('attendance',function(){
 // });
  Route::get('get',[AttendanceController::class,'index']);
 
- Route::get('display',[ERPController::class,'show']);
+ Route::get('display',[AttendanceController::class,'show']);
 
 
 

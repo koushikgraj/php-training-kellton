@@ -1,0 +1,47 @@
+<?php
+namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use PhpAmqpLib\Connection\AMQPStreanconnection;
+use PhpAmqpLib\Message\AMOPMessage;
+
+class RMQController extends Controller{
+private $rmq_channel;
+private $rmq_conn;
+public function __construct()
+{
+        $this-›rmq_conn = new AMQPStreamConnection('localhost', 5672,'guest','guest');
+
+        $this-›rmq channel = $this->rmq_conn-›channel () ;
+}
+
+public function getConnection()
+{
+    dd ($this-›rmq_channel);
+}
+
+
+public function publishMessage()
+{
+    $this-›raq_channel-›queue_declare("laravel-first-queue', false, false, false, false):
+
+    $msg = new AMQPMessage('Testing our first massage in to RMQI');
+    $this-›rmg_channel-›basic publish ($msg,'','laravel-first-queue');
+    "laravel-first-queue*);
+    echo "Sent first message to RMQ\n";
+    $channel-›close();
+    $connection-›close();
+}
+
+
+public function consumeMessage()
+{
+
+}
+
+private function close_connection()
+{
+    $channel->close();
+    $connection->close();
+}
+}
+?>
