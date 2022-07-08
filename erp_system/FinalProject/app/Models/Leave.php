@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Login extends Model
+class Leave extends Model
 {
     use HasFactory;
-    protected $table = 'login';
+    public $table='leaves';
     protected $fillable = [
-        'username',
-        'password'
+        'user','user_name','ltype','sdate',
+        'edate', 'reason'
     ];
+
+    public $timestamps = false;
 }

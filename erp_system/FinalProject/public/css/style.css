@@ -1,4 +1,4 @@
-/********** Template CSS **********/
+
 :root {
     --primary: #EB1616;
     --secondary: #191C24;
@@ -287,3 +287,39 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1;
+    padding: 20px;
+    border-width: 1px;
+}   
+
+.vdetails {
+    padding: 70px;
+   /* padding-left: 265px; */
+    margin-top: 100px;
+    letter-spacing: 1px;
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box;
+    outline-style: outset;
+    background-color: darkslategray;
+}
+
+.btn-secondary {
+    border-color: #191C24;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: blanchedalmond;
+    background-color: cadetblue;
+    
+}   
+
+/* .create {
+    box-sizing: border-box;
+    background-color: darkred;
+    color: white;
+} */

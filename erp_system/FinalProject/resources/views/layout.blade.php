@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Management Portal</title>
+    <title>Management</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,10 +30,12 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> Replace-->
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> Replace-->
 </head>
 
 <body>
@@ -51,26 +53,19 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Management System</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>HR PORTAL</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">SUHAS</h6>
+                        <h6 class="mb-0">Harsh Singh</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="ex" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>User Profile</a>
-
-
-                    @if(session('is_manager') =='1')
-                        <a href="dash" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Approve Leave</a>
-                    @endif
-
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Attendance</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -79,13 +74,13 @@
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
-                    
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave </a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leaves </a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                            <a href="apply" class="dropdown-item">Apply Leave</a>
+                            <a href="create" class="dropdown-item">List all my leaves</a>
+                            <a href="login" class="dropdown-item">Manager </a>
                         </div>
                     </div>
 
@@ -93,6 +88,7 @@
             </nav>
         </div>
         <!-- Sidebar End -->
+      
 
         
         <!-- Content Start -->
@@ -181,7 +177,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="{{url('logout')}}" class="dropdown-item">Log Out</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +225,8 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <!-- <script src="js/main.js"></script> Replace-->
 </body>
 
 </html>

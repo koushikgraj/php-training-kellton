@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ERPController;
-use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,39 +16,45 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
+
+
 
 Route::get('layout', function () {
     return view('layout');
 });
 
-
-Route::post('add',[ERPController::class,'addUser']);
-Route::get('add',[ERPController::class , 'User']);
-Route::get('update',[ERPController::class , 'edit']);
-
-
-Route::post('login',[ERPController::class , 'login']);
-Route::get('login',[ERPController::class , 'loginUser']);
-
-Route::get('ex', function () {
-    if(Session::exists('user')) {
-        return view('executivedashboard');
-    }else{
-        return view('not_authorized');
-    }
+Route::get('apply', function () {
+    return view('apply');
 });
-Route::get('dash', function () {    
-    return view('dashboard');
-});
+Route::post('store',[LeaveController::class,'saveleave']);
+Route::get('create',[LeaveController::class,'show']);
 
-Route::get('myprofile', function () {    
-    return view('get');
+
+/*Route::get('create', function () {
+    return view('create');
+});*/
+
+
+Route::get('approve', function () {
+    return view('approve');
+});
+Route::get('login', function () {
+    return view('login');
 });
 
+/*Route::get('ldetails', function () {
+    return view('leave-details');
+});*/
+Route::post('adaction',[LoginController::class,'adaction']);
 
+Route::post('adlogin',[LoginController::class,'login']);
+Route::get('adlogin',[LoginController::class,'loginuser']);
+Route::get('admin',[LoginController::class,'show']);
 
-Route::get('logout',[ERPController::class , 'logoutUser']);
-Route::get('get',[ERPController::class , 'getUser']);
+Route::get('details/{id}',[LoginController::class,'viewDetails']);
 
+Route::get('takeaction',[LoginController::class,'adaction']);
+
+//Route::get('actionad',[LoginController::class,'adaction']);
