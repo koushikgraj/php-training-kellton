@@ -58,7 +58,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Viren Rajput</h6>
+                        <h6 class="mb-0">Arshil Aziz</h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Attendance</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ url('attendance') }}" class="dropdown-item">Attendance</a>
-                            <a href="{{ url('holiday') }}" class="dropdown-item">Hollydays</a>
+                            <a href="{{ url('holiday') }}" class="dropdown-item">Holidays</a>
                             <a href="element.html" class="dropdown-item">Timesheet</a>
                             <a href="{{ url('display') }}" class="dropdown-item">Display Attendance Employee</a>
                         </div>
