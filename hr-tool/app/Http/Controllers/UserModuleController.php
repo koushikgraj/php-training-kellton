@@ -173,5 +173,4 @@ class UserModuleController extends Controller
 
 
 
-
  // Session::get('user_id');
