@@ -42,11 +42,12 @@
     </div>
   </div>
   </div>
-  
-  <hr>
-  
-  
-  
+  <br>
+
+  <a href='{{ url("showbankdata") }}' class="pull-right btn btn-success space-left">Goto Bank Details</a>
+  <br>
+  <br>
+
   <div class="bank--add__body">
     <div class="container-fluid">
       <div class="row">
@@ -70,7 +71,7 @@
             <label class="form__label">Country</label>
             <br>
             <select name="country" class="bank__country" required>
-              <option>Select a Country</option>
+              <option>Select Country of Bank</option>
               <option>India</option>
               <option>Nepal</option>
               <option>USA</option>

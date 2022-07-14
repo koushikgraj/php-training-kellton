@@ -53,10 +53,10 @@
                                         <td>{{ $item->location }}</td>
                                         <td>{{ $item->account_number }}</td>
                                 <td>
-                                <a href='{{ url("editholiday/$item->id") }}' title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                <a href='{{ url("viewbankdata/$item->id") }}' title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                 <a href='{{ url("editbankdata/$item->id") }}' class="btn btn-sm btn-info">Edit</a>
-                                <a href='{{ url("deleteholiday/$item->id") }}' class="btn btn-sm btn-danger">Delete</a>
-    
+                                <a href='{{ url("deletebankdata/$item->id") }}' class="btn btn-sm btn-danger">Delete</a>
+                                
                             </td>
                                 
 </tr>

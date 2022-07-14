@@ -160,3 +160,7 @@ Route::get('showbankdata',[OnbordingController::class,'onbording_bank_details'])
 Route::get('editbankdata/{id}',[OnbordingController::class,'editbankdata']);
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Route::post('updatebankdata/{id}', [OnbordingController::class, 'updatebankdata']);
+
+Route::get('deletebankdata/{id}',[OnbordingController::class,'destroy']);
+Route::get('viewbankdata/{id}',[OnbordingController::class,'viewbankdata']);
+

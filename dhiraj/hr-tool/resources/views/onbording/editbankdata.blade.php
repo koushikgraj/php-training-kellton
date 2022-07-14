@@ -3,9 +3,11 @@
 
 
 <div class="card">
-  <div class="card-header">Bank Data Page</div>
+  <h3><div class="card-header" style="color:Green;">Update Bank Data</div></h3>
   <div class="card-body">
       
+      <a href='{{ url("showbankdata") }}' class="pull-right btn btn-success space-left">All Bank Data</a>
+
       <!-- <form action="{{ url('editbankdata/' .$item->id) }}" method="post"> -->
       <!-- <form action="{{url('updatebankdata')}}/{{$item->id}}" method="post"> -->
       <form action="{{url('updatebankdata')}}/{{$item->id}}" method="post">
