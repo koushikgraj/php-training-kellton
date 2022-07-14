@@ -43,7 +43,7 @@ class OnbordingController extends Controller
 //Show Bank Details from Database in Tabular Form
     public function onbording_bank_details()
     {
-        $posts = OnbordingShow::all();
+        $posts = OnbordingShow::paginate(5);
         return view ('onbording.showbankdata')->with('posts', $posts);
     }
 //=====================================================================================================
@@ -53,16 +53,16 @@ public function storebankdetails(Request $request)
     {
         $request->validate([
             'account_type'=>'required',
-            'country'=>'required',
-            'ifsc_code'=>'required',
-            'contact'=>'required',
+            'country'=>'required|max:15|min:0',
+            'ifsc_code'=>'required|max:6|min:0',
+            'contact'=>'required|max:10|min:10',
             'name'=>'required',
             'location'=>'required',
-            'account_number'=>'required',
+            'account_number'=>'required|max:20|min:10',
         ]);
         $input = $request->all();
         OnBording::create($input);
-        return view('onbording.bankdetails')->with('message', 'Successfully Contact Added!'); 
+        return redirect('bankdetails')->with('success', 'Successfully Bank Added!'); 
     }
 //==========================================================================================================  
 //========================================================================================================  
@@ -102,7 +102,6 @@ public function editbankdata($id)
     public function viewbankdata($id)
     {
         $item = OnbordingShow::find($id);
-      //  return redirect('viewbankdata')->with('flash_message', 'Student deleted!');  
         return view('onbording.viewbankdata')->with('item',$item);
     }
 //=======================================================================================================
