@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 03:23 PM
--- Server version: 5.7.11
--- PHP Version: 5.6.19
+-- Generation Time: Jul 15, 2022 at 05:37 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,6 +20,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `erp_users`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emp_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`id`, `first_name`, `last_name`, `emp_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Arshil', 'Aziz', '123', 'P', '2022-07-06 05:53:02', '2022-07-06 05:53:02'),
+(3, 'Nandini', 'Rohatgi', '143', 'A', '2022-07-06 22:50:41', '2022-07-06 22:50:41'),
+(4, 'Kunal', 'Jaiswal', '1457', 'P', '2022-07-06 22:58:29', '2022-07-06 22:58:29'),
+(5, 'Virendra', 'Rajput', '7653', 'P', '2022-07-06 23:23:41', '2022-07-06 23:23:41'),
+(6, 'Ajay', 'Kumar', '348', 'P', '2022-07-07 04:39:08', '2022-07-07 04:39:08'),
+(7, 'Harsh', 'Singh', '37654', 'P', '2022-07-07 05:36:17', '2022-07-07 05:36:17'),
+(8, 'Abhay', 'Anand', '67339', 'A', '2022-07-07 05:40:04', '2022-07-07 05:40:04'),
+(11, 'Ritu', 'Kumari', '6543', 'A', '2022-07-07 05:52:05', '2022-07-07 05:52:05'),
+(0, 'vavilapalli', 'kumar', '11', 'P', '2022-07-12 23:28:14', '2022-07-12 23:28:14'),
+(0, 'VAVILAPALLI', 'KUAMR', '11', 'P', '2022-07-14 06:50:49', '2022-07-14 06:50:49'),
+(0, 'VAVILAPALLI', 'KUAMR', '11', 'A', '2022-07-14 07:03:02', '2022-07-14 07:03:02');
 
 -- --------------------------------------------------------
 
@@ -60,8 +94,9 @@ INSERT INTO `details` (`id`, `manager_id`, `user_id`, `name`, `email`, `dob`, `a
 (6, 0, 0, 'Ajay', 'ajay@ajay.com', '2022-01-01', '1234', 'Bengaluru', 'karnataka', 'india', '12345678', 'Kumarswamy Layout', '123', 'unmarried', 'male', 'Computerscience Engineering', '2022-07-15', '2022-07-08 00:44:27', '2022-07-08 00:44:27'),
 (7, 0, 0, 'Ram', 'ram@ram.com', '2022-01-01', '323333', '55466', 'karnataka', 'australia', '123456', '455', '456', 'married', 'male', 'Civil Engineering', '2028-02-03', '2022-07-08 01:05:43', '2022-07-08 01:05:43'),
 (8, 2, 0, 'Ram', 'ram@ram.com', '2022-01-01', '323333', '55466', 'karnataka', 'australia', '123456', '455', '456', 'married', 'male', 'Civil Engineering', '2028-02-03', '2022-07-08 01:06:16', '2022-07-08 01:06:16'),
-(9, 0, 0, 'Ram', 'ram@ram.com', '2022-01-01', '323333', '55466', 'karnataka', 'australia', '123456', '455', '456', 'married', 'male', 'Civil Engineering', '2028-02-03', '2022-07-08 01:07:30', '2022-07-08 01:07:30'),
-(10, 0, 10, 'raj', 'raj@raj.com', '2022-01-01', '1132322', 'Bengaluru', 'karnataka', 'india', '1212112', 'Kumarswamy Layout', '45645', 'married', 'male', 'Civil Engineering', '2022-01-01', '2022-07-08 01:13:45', '2022-07-08 01:13:45');
+(9, 11, 0, 'Ram', 'ram@ram.com', '2022-01-01', '323333', '55466', 'karnataka', 'australia', '123456', '455', '456', 'married', 'male', 'Civil Engineering', '2028-02-03', '2022-07-08 01:07:30', '2022-07-08 01:07:30'),
+(10, 0, 10, 'raj', 'raj@raj.com', '2022-01-01', '1132322', 'Bengaluru', 'karnataka', 'india', '1212112', 'Kumarswamy Layout', '45645', 'married', 'male', 'Civil Engineering', '2022-01-01', '2022-07-08 01:13:45', '2022-07-08 01:13:45'),
+(11, 0, 11, 'ajay', 'ajay@gmail.com', '15/06/2001', '904911194669', 'vizag', 'andhra pradesh', 'india', '8008897383', '3-15.burada. rajam', '3-15.burada. rajam', 'unmarried', 'male', 'ug', '0000-00-00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -76,7 +111,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -102,7 +137,6 @@ CREATE TABLE `holiday` (
 --
 
 INSERT INTO `holiday` (`id`, `no`, `month`, `date`, `day_of_the_week`, `holiday`, `holiday_type`, `created_at`, `updated_at`) VALUES
-(16, 1, 'January', '2022-01-13', 'Thursday', 'Lohri', 'Festival Holiday', '2022-07-07 06:57:06', '2022-07-08 04:03:55'),
 (18, 2, 'January', '2023-01-26', 'Wednesday', 'Republic Day 1', 'National Holiday', '2022-07-07 07:05:57', '2022-07-08 04:07:06'),
 (19, 3, 'March', '2022-03-12', 'Friday', 'Good Friday', 'Mandatory Holiday', '2022-07-07 07:07:32', '2022-07-07 07:07:32'),
 (20, 4, 'April', '2022-04-15', 'Friday', 'Good Friday', 'Mandatory Holiday', '2022-07-07 07:11:57', '2022-07-07 07:11:57'),
@@ -129,8 +163,8 @@ CREATE TABLE `leaves` (
   `edate` date NOT NULL,
   `reason` varchar(255) NOT NULL,
   `action` enum('approved','rejected','on hold','') NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -141,11 +175,11 @@ INSERT INTO `leaves` (`id`, `manager_id`, `user_name`, `user`, `ltype`, `sdate`,
 (1, 0, '', 4, 'earn leave', '2022-06-06', '2022-08-08', 'disease', 'approved', NULL, NULL),
 (2, 0, '', 4, 'earn leave', '2022-06-06', '2022-08-08', 'disease', 'approved', NULL, NULL),
 (3, 2, '', 2, 'earn leave', '2022-07-07', '0223-06-06', 'disease', 'on hold', NULL, NULL),
-(4, 0, '', 2, 'earn leave', '2022-07-07', '0223-06-06', 'disease', 'rejected', NULL, NULL),
+(4, 11, '', 2, 'earn leave', '2022-07-07', '0223-06-06', 'disease', 'rejected', NULL, NULL),
 (5, 0, '', 4, 'earn leave', '2022-08-08', '2022-09-09', 'fever', 'rejected', NULL, NULL),
 (6, 0, '', 4, 'earn leave', '2022-08-08', '2022-09-09', 'fever', 'approved', NULL, NULL),
 (7, 1, '', 6, 'lop leave', '2022-09-09', '2022-11-11', 'fever', 'approved', '2022-07-05 23:07:11', '2022-07-05 23:07:11'),
-(8, 0, '', 6, 'lop leave', '2022-09-09', '2022-11-11', 'fever', 'on hold', '2022-07-05 23:07:11', '2022-07-05 23:07:11'),
+(8, 11, '', 6, 'lop leave', '2022-09-09', '2022-11-11', 'fever', 'on hold', '2022-07-05 23:07:11', '2022-07-05 23:07:11'),
 (9, 0, '', 9, 'marraige leave', '2022-12-11', '2022-12-12', 'kcjsdzkh', 'approved', '2022-07-05 23:31:05', '2022-07-05 23:31:05'),
 (10, 0, '', 9, 'marraige leave', '2022-12-11', '2022-12-12', 'kcjsdzkh', 'approved', '2022-07-05 23:31:05', '2022-07-05 23:31:05'),
 (11, 0, '', 10, 'lwp leave', '2022-11-11', '2022-12-12', 'adksdj', 'on hold', '2022-07-05 23:36:12', '2022-07-05 23:36:12'),
@@ -187,7 +221,8 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
 (1, 'Suhas', '01d859bc55a2a4bbb87ed0298b8c0b1c', '2022-07-06 06:01:12', '2022-07-06 06:01:12'),
 (2, 'koushik', '1e9bc3587302f1704bb34c27b672e02d', NULL, NULL),
-(10, 'raj', '65a1223dae83b8092c4edba0823a793c', NULL, NULL);
+(10, 'raj', '65a1223dae83b8092c4edba0823a793c', NULL, NULL),
+(11, 'ajay', '29e457082db729fa1059d4294ede3909', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -239,7 +274,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -270,7 +305,9 @@ CREATE TABLE `timesheets` (
 
 INSERT INTO `timesheets` (`id`, `userid`, `date`, `start`, `end`, `regular`, `over`, `total`, `created_at`, `updated_at`) VALUES
 (0, 2, '2022-07-15', '01:03:00', '04:03:00', 5, 5, 5, '2022-07-08 04:20:01', '2022-07-08 04:20:01'),
-(0, 2, '2024-01-03', '09:00:00', '05:30:00', 5, 10, 10, '2022-07-08 04:22:37', '2022-07-08 04:22:37');
+(0, 2, '2024-01-03', '09:00:00', '05:30:00', 5, 10, 10, '2022-07-08 04:22:37', '2022-07-08 04:22:37'),
+(0, 11, '2022-07-13', '10:24:00', '12:24:00', 32, 5, 40, '2022-07-12 23:25:11', '2022-07-12 23:25:11'),
+(0, 11, '2022-07-14', '18:02:00', '19:02:00', 5, 3, 8, '2022-07-14 07:02:41', '2022-07-14 07:02:41');
 
 -- --------------------------------------------------------
 
@@ -359,42 +396,51 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `details`
 --
 ALTER TABLE `details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `holiday`
 --
 ALTER TABLE `holiday`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
 --
 -- AUTO_INCREMENT for table `leaves`
 --
 ALTER TABLE `leaves`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

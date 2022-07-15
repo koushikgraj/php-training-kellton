@@ -26,6 +26,11 @@
                         <br/>
     
                         <div class="table-responsiv">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
                             <table class="table" width="100">
                                 <thead>
                                     <tr>
@@ -78,6 +83,11 @@
             </div>
         </div>
     </div>
+    <style>
+.w-5{
+    display:none;
+}
+</style>
     </body>
 </html>
     @endsection
