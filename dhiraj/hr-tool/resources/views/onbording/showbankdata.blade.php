@@ -61,8 +61,12 @@
                                 <td>
                                 <a href='{{ url("viewbankdata/$item->id") }}' title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                 <a href='{{ url("editbankdata/$item->id") }}' class="btn btn-sm btn-info">Edit</a>
-                                <a href='{{ url("deletebankdata/$item->id") }}' class="btn btn-sm btn-danger">Delete</a>
-                                
+                                <!-- <a href='{{ url("deletebankdata/$item->id") }}' class="btn btn-sm btn-danger">Delete</a> -->
+                                <form method="POST" action="{{ url('/deletebankdata' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
                             </td>
                                 
 </tr>

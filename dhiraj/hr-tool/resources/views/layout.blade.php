@@ -7,6 +7,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
 <style>
     .footer{
@@ -101,7 +103,7 @@
                             <a href="{{url('qualifications')}}" class="dropdown-item">Qualifications</a>
                             <a href="{{url('skills')}}" class="dropdown-item">Skill Sets</a>
                             <a href="{{url('work-experience')}}" class="dropdown-item">Work Experience </a>
-                            <a href="{{url('bank-details')}}" class="dropdown-item">Add Bank Details</a>
+                            <a href="{{url('bankdetails')}}" class="dropdown-item">Add Bank Details</a>
                             <a href="{{url('showbankdata')}}" class="dropdown-item">Emp Bank Details </a>
                             <!-- @if(session('is_manager') =='1')
                                 <a href="{{url('admin')}}" class="dropdown-item">Approve leave </a>

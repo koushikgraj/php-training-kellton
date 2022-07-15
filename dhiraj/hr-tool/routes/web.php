@@ -8,6 +8,7 @@ use App\Http\Controllers\ERPController;
 use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\OnbordingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -138,29 +139,29 @@ Route::get('attendance',function(){
 
 
 
-// =========================On-Bording Routes============================
-
+// =========================On-Bording Routes========================================PROFILE
 Route::get('user-profile',[OnbordingController::class,'onbording_Profile']);
+//===================================================================================QUQLIFICATION
 Route::get('qualifications',[OnbordingController::class,'qualifications']);
+//===================================================================================SKILLS
 Route::get('skills',[OnbordingController::class,'skills']);
+//===================================================================================WORK-EXPERIENCE
 Route::get('work-experience',[OnbordingController::class,'work_experience']);
-Route::get('bank-details',[OnbordingController::class,'bank']);
+//=======================================================================================BANK-FORM
+// Route::get('bank-details',[OnbordingController::class,'bank']);
 Route::get('bankdetails',[OnbordingController::class,'bank']);
 Route::post('bank-details',[OnbordingController::class,'storebankdetails']);
-
+// Route::get('bank-detail',[OnbordingController::class,'bank']);
 Route::get('/onbording/bankdetails',[OnbordingController::class,'storebankdetails']);
-
-//===============================================================================================
+//==========================================================================================SHOW
 Route::get('addbankdata',[OnbordingController::class,'bank']);
-//model emp band data tooooo show bank details table=============================================
+//model emp band data tooooo show bank details table============================
 Route::get('showbankdata',[OnbordingController::class,'onbording_bank_details']);
-
-
-//==============================================================================================
-Route::get('editbankdata/{id}',[OnbordingController::class,'editbankdata']);
-//==============================================================================================
-Route::post('updatebankdata/{id}', [OnbordingController::class, 'updatebankdata']);
-
-Route::get('deletebankdata/{id}',[OnbordingController::class,'destroy']);
 Route::get('viewbankdata/{id}',[OnbordingController::class,'viewbankdata']);
+//===========================================================================================EDIT
+Route::get('editbankdata/{id}',[OnbordingController::class,'editbankdata']);
+//===========================================================================================UPDATE
+Route::post('updatebankdata/{id}', [OnbordingController::class, 'updatebankdata']);
+//===========================================================================================DELETE
+Route::DELETE('deletebankdata/{id}',[OnbordingController::class,'destroy']);
 
