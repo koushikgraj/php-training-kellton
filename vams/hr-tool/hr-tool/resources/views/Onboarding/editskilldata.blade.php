@@ -6,7 +6,7 @@
   <h3><div class="card-header" style="color:Green;">Update Skill Data</div></h3>
   <div class="card-body">
       
-      <a href='{{ url("showSKilldata") }}' class="pull-right btn btn-success space-left">All Skill Data</a>
+      <!-- <a href='{{ url("showSKilldata") }}' class="pull-right btn btn-success space-left">All Skill Data</a> -->
 
       <!-- <form action="{{ url('editSkilldata/' .$item->id) }}" method="post"> -->
       <!-- <form action="{{url('updateSkilldata')}}/{{$item->id}}" method="post"> -->
