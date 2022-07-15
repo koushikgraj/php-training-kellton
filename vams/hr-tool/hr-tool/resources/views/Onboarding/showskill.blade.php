@@ -33,9 +33,7 @@
                                         <th scope="col">Proficiency_level</th>
                                         <th scope="col">Certification</th>
                                         <th scope="col">Work_experience</th>
-                                        
-
-                                        
+                                                                                
                                     </tr>
                                 </thead>
                                 <tbody id="myrow">
@@ -48,11 +46,7 @@
                                         <td>{{ $item->Proficiency_level }}</td>
                                         <td>{{ $item->Certification }}</td>
                                         <td>{{ $item->Work_experience }}</td>
-                                        
-
-
-
-                                        
+                                                                                
                                 <td>
                                 <a href='{{ url("viewSkilldata/$item->id") }}' title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                 <a href='{{ url("editSkilldata/$item->id") }}' class="btn btn-sm btn-info">Edit</a>
