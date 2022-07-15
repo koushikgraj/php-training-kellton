@@ -12,6 +12,7 @@
   <div>
   <label for="formGroupExampleInput">Proficiency_level </label><br>
     <select name="Proficiency_level" >
+          <option value="select">select</option>
           <option value="beginner">beginner</option>
           <option value="learner">learner</option>
           <option value="expert">expert</option>
