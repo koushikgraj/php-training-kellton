@@ -15,15 +15,8 @@
       <form action="{{ url('bank-details') }}" method="post">
         @csrf
 
-<!-- Printing the succss msg that contact has added -->
-@if(session('message'))
- <h1><div class="alert msg" style="text-align:center;"
- style="color:Green;">{{session('message')}}</div></h1>
-@endif
-<br>
-<br>
 
-<!-- Printing the succss msg end here -->
+
 
 
 
@@ -43,6 +36,13 @@
   </div>
   </div>
   <br>
+<!-- Printing the succss msg that contact has added -->
+@if(session('success'))
+ <div class="alert alert-success"  style="width:250px;" style="color:Red;" style="text-align:left;" style="padding:3px;">
+ {{session('success')}}
+</div>
+@endif
+<!-- Printing the succss msg end here -->
 
   <a href='{{ url("showbankdata") }}' class="pull-right btn btn-success space-left">Goto Bank Details</a>
   <br>
@@ -126,7 +126,7 @@
             <input class="account-number" name="account_number"  type="password" placeholder="e.g. 000122039827" required>
             <span class="show__account--number">
               <!-- this code is showing eye symbol for to see data while typing or not to see -->
-              <!-- <i class="fa fa-eye-slash pword_icon"></i> -->
+              <i class="fa fa-eye-slash pword_icon"></i>
             </span>
           </div>
         </div>

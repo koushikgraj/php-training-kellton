@@ -145,20 +145,20 @@ Route::get('qualifications',[OnbordingController::class,'qualifications']);
 Route::get('skills',[OnbordingController::class,'skills']);
 Route::get('work-experience',[OnbordingController::class,'work_experience']);
 Route::get('bank-details',[OnbordingController::class,'bank']);
-
+Route::get('bankdetails',[OnbordingController::class,'bank']);
 Route::post('bank-details',[OnbordingController::class,'storebankdetails']);
 
 Route::get('/onbording/bankdetails',[OnbordingController::class,'storebankdetails']);
 
-//===============
+//===============================================================================================
 Route::get('addbankdata',[OnbordingController::class,'bank']);
-//model emp band data tooooo show bank details table========================
+//model emp band data tooooo show bank details table=============================================
 Route::get('showbankdata',[OnbordingController::class,'onbording_bank_details']);
 
 
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//==============================================================================================
 Route::get('editbankdata/{id}',[OnbordingController::class,'editbankdata']);
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//==============================================================================================
 Route::post('updatebankdata/{id}', [OnbordingController::class, 'updatebankdata']);
 
 Route::get('deletebankdata/{id}',[OnbordingController::class,'destroy']);

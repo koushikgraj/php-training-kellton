@@ -25,6 +25,12 @@
                         <br/>
                         <br/>
                         <div class="table-responsiv">
+                            
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
                             <table class="table" width="100">
                                 <thead>
                                     <tr>
@@ -64,12 +70,24 @@
 
                                 </tbody>
                             </table>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <h9>
+<div class="row"  style="width:350px;" style="color:Green;">
+        {{$posts->links()}}
+</div>
+</h9>
+<style>
+.w-5{
+    display:none;
+}
+</style>
+
     </body>
 </html>
     @endsection
