@@ -36,7 +36,7 @@ class OnbordingController extends Controller
 //Show form for storing Data in Database
     public function bank()
     {
-        return view('onbording.bankdetails');
+        return view('onbording.bankdetail');
     }
 //=====================================================================================================
 //======================================================================================================
