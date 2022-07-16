@@ -175,6 +175,9 @@ Route::DELETE('deletebankdata/{id}',[OnbordingController::class,'destroy']);
 // Route::post('display-ProfilePage',[ProfilePageController::class,'ProfilePage']);
 Route::post('display-ProfilePage',[ProfilePageController::class,'ProfilePagestore']);
 Route::view('display-ProfilePage','ProfilePage');
+// Route::view('showPdata','showProfilePage');
+Route::get('show_profile_data',[ProfilePageController::class,'show_profile_data']);
+
 Route::get('addProfilePagedata',[ProfilePageController::class,'ProfilePagestore']);
 Route::get('gotoqdetail',[ProfilePageController::class,'gotoqdetail']);
 Route::get('editProfilePagedata/{id}',[ProfilePageController::class,'editProfilePagedata']);

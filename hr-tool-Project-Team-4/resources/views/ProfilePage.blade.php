@@ -79,7 +79,7 @@ input[type=submit]:hover {
 
 <div class="container">
   <!-- <div style="text-align:center"> -->
-  <a href='{{ url("gotoqdetail") }}' class="pull-right btn btn-success space-left">Goto ProfilePage Details</a>
+  <a href='{{ url("show_profile_data") }}' class="pull-right btn btn-success space-left">Goto ProfilePage Details</a>
     
   
   
@@ -129,7 +129,7 @@ input[type=submit]:hover {
         </select>
         <span>@error('employee_type'){{$message}}@enderror</span>
         <input type="submit" value="Submit">
-        <input type="submit" value="Reset">
+        <input type="reset" value="Reset">
       </form>
     </div>
   </div>
