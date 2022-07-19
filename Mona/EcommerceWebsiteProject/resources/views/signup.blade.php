@@ -4,6 +4,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="/css/signup.css">
+<link rel="stylesheet" href="styles.css">
 
 
 <div class="container">
@@ -93,5 +94,7 @@ and product landing pages</p>   <br>
 <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com  
  <i class="fa fa-window-restore "></i></a></p>
 </div>
+
 <br><br>
+
 </article>
