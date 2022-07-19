@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    <title>NatureCart</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -45,24 +45,12 @@
 
                             <!-- Top Header Content -->
                             <div class="top-header-meta d-flex">
-                                <!-- Language Dropdown -->
-                                <div class="language-dropdown">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">USA</a>
-                                            <a class="dropdown-item" href="#">UK</a>
-                                            <a class="dropdown-item" href="#">Bangla</a>
-                                            <a class="dropdown-item" href="#">Hindi</a>
-                                            <a class="dropdown-item" href="#">Spanish</a>
-                                            <a class="dropdown-item" href="#">Latin</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
+                                    <a href="login"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
                                 </div>
+
                                 <!-- Cart -->
                                 <div class="cart">
                                     <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
@@ -102,37 +90,27 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="shop.html">Shop</a>
+                                    
+                                            <li><a href="">Categories</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul>
+                                                    <li><a href="">Outdoor plants</a></li>
+                                                    <li><a href="">Indoor plants</a></li>
+                                                    <li><a href="">office plants</a></li>
+                                                    <li><a href="">potted</a></li>
+                                                    
+                                                    </ul>
                                             </li>
-                                            <li><a href="portfolio.html">Portfolio</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="single-portfolio.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-post.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                    
+                                        
+                                            
+                                            
+                                          
                                         </ul>
                                     </li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                                    
+                                </ul>        
+                                            
+                                                   
 
                                 <!-- Search Icon -->
                                 <div id="searchIcon">

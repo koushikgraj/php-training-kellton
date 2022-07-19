@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ecomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::get('/', function () {
 Route::get('layout', function () {
     return view('layout');
 });
+Route::get('index', function () {
+    return view('index');
+});
 Route::get('login', function () {
     return view('login');
 });
@@ -27,6 +31,18 @@ Route::get('signup', function () {
 });
 Route::get('cart', function () {
     return view('cart');
+});
+Route::get('add', function () {
+    return view('addcategory');
+});
+Route::post('register', [ecomController::class, 'register']);
+Route::post('login',[ecomController::class , 'login']);
+Route::get('', function () {
+    if(Session::exists('user')) {
+        return view('layout');
+    }else{
+        return view('not_authorized');
+    }
 });
 
 

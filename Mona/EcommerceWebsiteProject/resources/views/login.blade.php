@@ -31,19 +31,20 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+			<form method="post" action="{{ url('login')}}"> 
+    @csrf  
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input name="username" type="text" class="form-control" placeholder="username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input name="password" type="password" class="form-control" placeholder="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
@@ -55,7 +56,7 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
+					Don't have an account?<a href="signup">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center">
 					<a href="#">Forgot your password?</a>
