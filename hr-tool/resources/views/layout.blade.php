@@ -93,6 +93,18 @@
                         </div>
                     </div>
 
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leaves </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                        <a href="{{url('display-ProfilePage')}}" class="dropdown-item">ProfilePage</a>                            <a href="{{url('create')}}" class="dropdown-item">List all leaves</a>
+                          
+                        
+                        
+                        <!-- @if(session('is_manager') =='1')
+                                <a href="{{url('admin')}}" class="dropdown-item">Approve leave </a>
+                            @endif -->
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
