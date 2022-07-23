@@ -28,7 +28,7 @@ Route::get('yaa', function () {
 // Route::get('edit/{id}',[GoodController::class,'showdata']);
 // Route::post('edit',[GoodController::class,'update']);
 Route::view('users','user');
-Route::view('hello','noaccess');
+Route::view('noaccess','noaccess');
 
 
 
