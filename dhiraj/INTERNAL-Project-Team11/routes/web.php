@@ -26,8 +26,41 @@ use App\Http\Controllers\FrontController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('admin.login');
 });
+//=============================================LOGIN-CHECK
+Route::get('/login', function () {
+  if(session('admin_id') == '1')
+  {
+    return redirect('admin/dashboard');
+  }else{
+    // return view('home');
+    return redirect('home');
+  }
+});
+//=============================================
+Route::get('/logout', function () {
+    if(session()->has('email'))
+    {
+    session()->pull('email');
+    }
+    // return view('admin.login');
+    return redirect('/');
+
+
+  });
+// ==============================================
+//===============================================
+Route::get('admin/dashboard',[AdminController::class,'dashboard']);
+Route::get('home',[AdminController::class,'home']);
+Route::post('userlogin',[UserController::class,'userlogin']);
+Route::get('/registration',[UserController::class,'registration']);
+
+
+
+
+
+
 //===============================header routes
 Route::view('shop','shop');
 Route::view('cart','cart');
@@ -52,12 +85,11 @@ Route::view('Smartwearable','smartwearable');
 Route::post('post-login',[UserController::class,'postLogin']);
 
 
- Route::get('admin',[AdminController::class,'index']);
+//  Route::get('admin',[AdminController::class,'index']);
 Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
- Route::get('admin/dashboard',[AdminController::class,'dashboard']);
 //  Route::get('admin/auth/updatepassword',[AdminController::class,'updatepassword']);
 
-Route::group(['middleware'=>'admin_auth'],function(){
+// Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/category',[CategoryController::class,'index']);
     Route::get('admin/category/manage_category',[CategoryController::class,'manage_category']);
     Route::get('admin/category/manage_category/{id}',[CategoryController::class,'manage_category']);
@@ -104,18 +136,19 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/product/product_images_delete/{paid}/{pid}',[ProductController::class,'product_images_delete']);
     
     
-    Route::get('admin/logout', function () {
-        session()->forget('ADMIN_LOGIN');
-        session()->forget('ADMIN_ID');
-        session()->flash('error','Logout sucessfully');
-        return redirect('admin');
-    });
-});
+//     Route::get('admin/logout', function () {
+//         session()->forget('ADMIN_LOGIN');
+//         session()->forget('ADMIN_ID');
+//         session()->flash('error','Logout sucessfully');
+//         return view('admin.login');
+//     });
+// });
+
+// Route::get('/logout',[CustomAuthController::class,'index']);
 
 
-
-Route::get('/login',[CustomAuthController::class,'login']);
-Route::get('/registration',[CustomAuthController::class,'registration']);
+// Route::get('/login',[CustomAuthController::class,'login']);
+// Route::get('/registration',[CustomAuthController::class,'registration']);
 
 Route::get('register',[UserController::class,'registration']);
 Route::post('post-registration',[UserController::class,'postregistration']);

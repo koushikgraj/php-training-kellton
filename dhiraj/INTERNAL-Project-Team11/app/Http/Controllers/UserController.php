@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Admin;
+use App\Models\Login;
 
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
 // Use App\User;
 use App\Models\Registrtion;
+use App\Models\Detail;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,68 +17,66 @@ use Session;
 
 class UserController extends Controller
 {
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+//===========================================================================
+    public function userlogin(Request $request)
     {
-        //
+        $email=$request->post('email');
+        $password=$request->post('password');
+        $result=Admin::where(['email'=>$email])->first();
+        if($result){
+            // if(Hash::check($request->post('password'),$result->password)){
+        if($request->post('password')==$result->password){
+                $request->session()->put('email', $result['email']);
+                $request->session()->put('password', $result['password']);
+                $request->session()->put('admin_id', $result['admin_id']);
+        // echo session('email');
+        // echo session('password');
+        // echo session('admin_id');
+                return redirect('login');
+            }else{
+                $request->session()->flash('error','Please enter correct password');
+                return redirect('/');
+            }
+        }else{ 
+            $request->session()->flash('error','Please enter valid login details');
+            return redirect('/');
+        }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
+//===================================================================================
 
 
 
+    // public function userlogin(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'email' => 'required|string',
+    //         'password' => 'required|string',
+    //     ]); 
 
+    //   $user =  Admin::where('email','=',$request->email)->where('password','=',$request->password);
+    //   if(!empty($user)){
+    //     // Session::put('email',$user->email);
+    //     Session::put('user_id',$user->id);
+    //     $name = Detail::select('name')->where('user_id','=',$user->id)->first();
+    //     Session::put('admin_id',$name->admin_id);
+    //     // Session::put('user_name',$request->username);
+    //     // $is_manager_user = Detail::where('manager_id','=',$user->id)->count();
+    //     // Session::put('is_manager',$is_manager_user>0?true:false);
+    //     return redirect('admin/dashbord');
+
+    // } else{
+    //     return view('registration');
+    //      }
+    
+    // }
+
+
+
+//=========================================================
     public function index()
     {
-        return view('login');
+        return view('admin.login');
     }  
  
     public function registration()
@@ -98,7 +99,7 @@ class UserController extends Controller
         return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
  
-    public function postRegistration(Request $request)
+    public function postregistration(Request $request)
     {  
         request()->validate([
         'name' => 'required',
@@ -111,21 +112,32 @@ class UserController extends Controller
         // Registration::create($input);
         // return redirect('login')->with('success', 'Successfully Bank Added!'); 
 
-
+        // OnBording::create($input);
+        // return redirect('bankdetails')
+        
         $data = $request->all();
  
-        $check = $this->create($data);
+        // $check = $this->create($data);
+        Registrtion::create($data);
+        Login::create($data);
+
        
-        return Redirect::to("admin/dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return Redirect::to("/")->withSuccess('Great! You have Successfully loggedin');
     }
      
+    // public function dashboard()
+    // {
+ 
+    //   if(Auth::check()){
+    //     return view('dashboard');
+    //   }
+    //    return Redirect::to("login")->withSuccess('Opps! You do not have access');
+    // }
+ 
+
     public function dashboard()
     {
- 
-      if(Auth::check()){
-        return view('dashboard');
-      }
-       return Redirect::to("login")->withSuccess('Opps! You do not have access');
+    return view('admin.dashboard');
     }
  
     public function create(array $data)

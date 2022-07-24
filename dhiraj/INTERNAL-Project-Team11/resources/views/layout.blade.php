@@ -38,6 +38,7 @@
                     <a class="text-dark" href="">Support</a>
                 </div>
             </div>
+            
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <a class="text-dark px-2" href="">
@@ -74,7 +75,9 @@
                             </span>
                         </div>
                     </div>
+                    
                 </form>
+                
             </div>
             <div class="col-lg-3 col-6 text-right">
                 <a href="" class="btn border">
@@ -139,8 +142,17 @@
                                     <a href="cart" class="dropdown-item">Shopping Cart</a>
                                     <a href="checkout" class="dropdown-item">Checkout</a> </div></div>
                                     <a href="contact" class="nav-item nav-link">Contact</a></div> <div class="navbar-nav ml-auto py-0">
-                                    <a href="admin" class="nav-item nav-link">Login</a>
-                                    <a href="register" class="nav-item nav-link">Register</a>
+                                    <!-- <a href="admin" class="nav-item nav-link">Login</a> -->
+                                    <!-- <a href="logout" class="nav-item nav-link">Logout</a> -->
+                                    <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">User<i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <!-- <a href="/" class="dropdown-item">Login</a> -->
+                                <a href="/registration" class="dropdown-item">Register</a>
+                                <a href="logout" class="dropdown-item">Logout</a>
+
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </nav>

@@ -132,7 +132,7 @@
                                                 <!-- <div class="account-dropdown__item"> -->
                                                     <!-- <a href="#"> -->
                                                     <a href="{{url('admin/register')}}" class="dropdown-item">Account</a>
-                                                    <a href="{{url('admin/logout')}}" class="dropdown-item">Logout</a>
+                                                    <a href="{{url('logout')}}" class="dropdown-item">Logout</a>
                                                         <!-- <i class="zmdi zmdi-account"></i>Account</a> -->
                                                 <!-- </div> -->
                                                 

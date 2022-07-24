@@ -26,7 +26,9 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="{{route('admin.auth')}}" method="post">
+                            <form action="userlogin" method="post">
+                            <!-- <form action="{{route('admin.auth')}}" method="post"> -->
+
                                 @csrf
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -37,8 +39,9 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required>
                                 </div>
                                 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button><br>
                                 
+                                <a class="small" href="{{url('registration')}}">Register</a>
                                 @if(session()->has('error'))
                                 <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
                                     {{session('error')}}  
