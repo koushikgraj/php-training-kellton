@@ -142,6 +142,7 @@
         <div class="info">
 
           USER-ID<input type="text" name="user">
+          USER-NAME<input type="text" name="user_name">
           LEAVE-TYPE<select name="ltype" >
           <option value="earn leave">Earned Leave</option>
           <option value="casual leave">Casual Leave</option>

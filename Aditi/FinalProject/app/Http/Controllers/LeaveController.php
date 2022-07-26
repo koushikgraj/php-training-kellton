@@ -13,12 +13,13 @@ class LeaveController extends Controller
         
         $leave= New Leave;
         $leave->user=$req->user;
+        $leave->user_name=$req->user_name;
         $leave->ltype=$req->ltype;
         $leave->sdate=$req->sdate;
         $leave->edate=$req->edate;
         $leave->reason=$req->reason;
         $leave->save();
-        Leave::create($req->all());
+        //Leave::create($req->all());
      
         return redirect('create')->with('message','Sending data successfully');
      }
@@ -31,14 +32,4 @@ class LeaveController extends Controller
     
 }
 
-
-
-
-
-
-  /*  public function showleaveadmin(Leave $leave)
-    {
-        return view('leave-details',compact('leave'));
-    }*/
-    
 

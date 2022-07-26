@@ -305,7 +305,7 @@ thead, tbody, tfoot, tr, td, th {
     width: 80%;
     box-sizing: border-box;
     outline-style: outset;
-    background-color: darkred;
+    background-color: darkslategray;
 }
 
 .btn-secondary {
