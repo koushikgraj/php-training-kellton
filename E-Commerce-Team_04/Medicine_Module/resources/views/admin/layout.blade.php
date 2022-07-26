@@ -33,8 +33,8 @@
       <div class="search-wrap">
         <div class="container">
           <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="#" method="post">
-            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          <form action="{{url('admin/search')}}" class="form navbar-left">
+            <input type="text" name="query" class="form-control" placeholder="Search keyword and hit enter...">
           </form>
         </div>
       </div>
@@ -84,7 +84,7 @@
                    <li>Admin</li>
                    @else
                   <ul class="dropdown">
-                  <li>User</li>
+                  <li><a href="myorders">User-My Orders</a></li>
                 </li>
                 @endif
                     <!-- <li><a href="category/addcategory"></a></li>
@@ -94,14 +94,15 @@
               </ul>
             </nav>
           </div>
-          <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="cart" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-          </div>
+            <div class="icons">
+                @if(session('user_id') !='1')
+               
+                <a href="search" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                <a href="cart" class="icons-btn d-inline-block bag"><span class="icon-shopping-bag"></span></a>
+               @endif
+              </form>
+
+            </div>
         </div>
       </div>
     </div>
@@ -140,9 +141,9 @@
           <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
             <h3 class="footer-heading mb-4">SOCIAL</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">YouTube</a></li>
+              <li><a href="https://www.facebook.com/">Facebook</a></li>
+              <li><a href="https://twitter.com/i/flow/login">Twitter</a></li>
+              <li><a href="https://youtube.com">YouTube</a></li>
             </ul>
           </div>
 

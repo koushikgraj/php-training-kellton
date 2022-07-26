@@ -6,20 +6,10 @@
 
   <div class="site-wrap">
 
-
-    <div class="bg-light py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mb-0"><a href="home">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
-        </div>
-      </div>
-    </div>
-    <div class="alert alert-success col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4" role="alert">
-           {{session('message')}}
-          </div>
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
+      
           @foreach($data as $d)
 
           <div class="col-sm-6 col-lg-4 text-center item mb-4 item-v2">
@@ -35,20 +25,16 @@
             <input type="number" value="1" min="1" class="form-control" style="width:100px;" name="quantity">
             <br>
             <input class = "btn btn-primary" type ="submit" value="ADD TO CART"></input>
-            </form>
+            <!-- </form> -->
           </div>
           @endforeach
- 
+
+          
         </div>
         
       </div>
-      {{{$data->links()}}}
     </div>
-    <style>
-      .w-5{
-        display: none;
-      }
-    </style>
+    
 </body>
 
 </html>

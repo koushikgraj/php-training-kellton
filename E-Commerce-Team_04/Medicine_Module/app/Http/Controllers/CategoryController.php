@@ -3,47 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Cart;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function checkout()
-    {
-        return view('admin.checkout');
-    }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function checkoutProduct(Request $request)
-    {
-        $data = new Store;
-        $data->country=$request->country;
-        $data->fname=$request->fname;
-        $data->lname=$request->lname;
-        $data->address=$request->address;
-        $data->state=$request->state;
-        $data->postal=$request->postal;
-        $data->email=$request->email;
-        $data->phone=$request->phone;
-
-        $data->save();
-        return redirect('admin/thankyou');
-    }
-
-
+    
       /**
-     * Display a listing of the resource.
+     * Display a page for storing data.
      *
      * @return \Illuminate\Http\Response
      */
@@ -83,7 +51,7 @@ class CategoryController extends Controller
     public function categoryList()
     {
        if(Session::exists('user_login')) {
-           $data = Category::all();
+           $data = Category::paginate(6);;
            return view('admin.categorylist', ['data'=>$data]);
 
        } else {
@@ -93,10 +61,16 @@ class CategoryController extends Controller
        }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Category  $list
+     * @return \Illuminate\Http\Response
+     */
     public function storeList()
     {
        if(Session::exists('user_login')) {
-           $list = Category::all();
+           $list = Category::paginate(6);
            return view('admin.store', ['data'=>$list]);
 
        } else {
@@ -123,8 +97,8 @@ class CategoryController extends Controller
 
     public function editCategory($id)
     {
-       $data = Category::find($id);
-       return view('admin.modifycategory')->with('data', $data);
+       $result = Category::find($id);
+       return view('admin.modifycategory')->with('result', $result);
 
      }
 
@@ -136,27 +110,15 @@ class CategoryController extends Controller
      */
     public function modifyCategory(Request $request, $id)
     {
-    //    
+        $data= $request->except('-method','_token','submit');
+        $arr['product']=$data['product'];
+        $arr['description']=$data['description'];
+        $arr['price']=$data['price'];
+        $arr['image']=$data['image'];
+        $result = Category::where('id','=',$data['id'])->update($arr);
+        $request->Session()->flash('message','Product Updated Successfully.');
+        return redirect('admin/category/list');
 
-    }
-
-    public function addToCart(Request $request)
-    {
-       $cart = new Cart;
-
-       $cart->user_id=$request->session()->get('user_login')['id'];
-       $cart->product_id=$request->product_id;
-       //$cart->quantity=$request->quantity;
-
-       $cart->save();
-
-       return redirect('admin/store');
-
-    }
-
-    public function cartItem()
-    {
-       return view('admin.cart');
     }
 }
 

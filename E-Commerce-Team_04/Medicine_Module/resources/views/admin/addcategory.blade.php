@@ -55,15 +55,13 @@
                 <li class="has-children">
                   <a href="#">Category</a>
                   <ul class="dropdown">
-                    <li><a href="category/addcategory">Add Category</a></li>
+                    <li><a href="addcategory">Add Category</a></li>
                     <li><a href="list">List of Category</a></li>
                     
                   </ul>
                 </li>                        
                 @endif
-                @if(session('user_id') !='1')
-                <li><a href="category/list">New Categories</a></li>
-                @endif
+                
 
                 <li><a href="{{url('admin/logout')}}">Logout</a></li>
                 <li><a href="{{url('admin/logout')}}"></a></li>
@@ -93,7 +91,6 @@
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="cart.html" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                 class="icon-menu"></span></a>
@@ -120,9 +117,9 @@
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                <div class="alert alert-success" role="alert">
+                <!-- <div class="alert alert-success" role="alert">
                 {{session('message')}}
-                    </div>
+                    </div> -->
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
 

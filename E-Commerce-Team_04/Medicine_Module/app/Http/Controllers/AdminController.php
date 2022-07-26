@@ -11,7 +11,6 @@ class AdminController extends Controller
 {
  
     /**
-     * Display a listing of the resource.
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -28,7 +27,7 @@ class AdminController extends Controller
 
     
     /**
-     * Display a listing of the resource.
+     * Display a login page for log in.
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -57,7 +56,7 @@ class AdminController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Display a home of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -77,11 +76,10 @@ class AdminController extends Controller
 
         return view('admin.store');
     }
-    //read the data from db with page inition.....pass data to view ....inside view using foreach read data and replace with upload image
-    //
+    
 
     /**
-     * Display a listing of the resource.
+     * Display a page for logout.
      *
      * @return \Illuminate\Http\Response
      */
@@ -95,7 +93,7 @@ class AdminController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Display a page for register user..
      *
      * @return \Illuminate\Http\Response
      */

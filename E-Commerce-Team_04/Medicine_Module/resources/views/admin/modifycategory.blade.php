@@ -50,7 +50,7 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="{{url('admin/home')}}"><a href="{{url('admin/home')}}">Home</a></li>
-                <li><a href="store">Store</a></li>
+                <li><a href="{{url('admin/store')}}">Store</a></li>
                 @if(session('user_id') =='1')
                 <li class="has-children">
                   <a href="#">Category</a>
@@ -61,22 +61,13 @@
                   </ul>
                 </li>                        
                 @endif
-                <!-- @if(session('user_id') !='1')
-                <li><a href="category/list">New Categories</a></li>
-                @endif -->
 
                 <li><a href="{{url('admin/logout')}}">Logout</a></li>
               </ul>
             </nav>
           </div>
           <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="{{url('admin/cart')}}" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
-                class="icon-menu"></span></a>
+            
           </div>
         </div>
       </div>
@@ -93,21 +84,22 @@
 
 
 
-<form action="{{url('admin/category/modifycategory')}}/{{$data->id}}" method="post">
+<form action="{{url('admin/category/modifycategory')}}/{{$result->id}}" method="post">
     @csrf
     <div class="container-fluid position-relative d-flex p-0">
        <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                <div class="alert alert-success" role="alert">
-                {{session('message')}}
-                    </div>
+                  <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
 
                         <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Update Medicine</h3>
                            
+                        </div>
+                        <div>
+                          <input type="hidden" name="id" value="{{$result->id}}></input>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="file" class="form-control" name="image">

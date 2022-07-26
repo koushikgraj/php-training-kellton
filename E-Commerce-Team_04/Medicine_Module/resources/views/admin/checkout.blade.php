@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 mb-0">
-            <a href="index.html">Home</a> <span class="mx-2 mb-0">/</span>
+            <a href="">Home</a> <span class="mx-2 mb-0">/</span>
             <strong class="text-black">Checkout</strong>
           </div>
         </div>
@@ -79,7 +79,7 @@
               </div>
               <div class="form-group">
                 <label for="c_order_notes" class="text-black">Order Notes</label>
-                <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control"
+                <textarea name="order_note" id="c_order_notes" cols="30" rows="5" class="form-control"
                   placeholder="Write your notes here..."></textarea>
               </div>
     
@@ -91,62 +91,36 @@
                 <h2 class="h3 mb-3 text-black">Your Order</h2>
                 <div class="p-3 p-lg-5 border">
                   <table class="table site-block-order-table mb-5">
-                    <thead>
-                      <th>Product</th>
-                      <th>Total</th>
-                    </thead>
+                    
                     <tbody>
                       <tr>
-                        <td>Bioderma <strong class="mx-2">x</strong> 1</td>
-                        <td>$55.00</td>
+                        <td> Product Price <strong class="mx-2"></strong> </td>
+                        <td>₹{{$total}}</td>
                       </tr>
                       <tr>
-                        <td>Ibuprofeen <strong class="mx-2">x</strong> 1</td>
-                        <td>$45.00</td>
+                        <td>GST & Tax. <strong class="mx-2"></strong> </td>
+                        <td>₹00.00 </td>
                       </tr>
                       <tr>
-                        <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-                        <td class="text-black">$350.00</td>
+                      <td>Delivery Charges <strong class="mx-2"></strong> </td>
+                        <td class="text-black">₹100.00</td>
                       </tr>
                       <tr>
                         <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                        <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+                        <td class="text-black font-weight-bold"><strong>₹{{$total+100}}</strong></td>
                       </tr>
                     </tbody>
                   </table>
-    
-                  <div class="border mb-3">
-                    <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button"
-                        aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
-    
-                    <div class="collapse" id="collapsebank">
-                      <div class="py-2 px-4">
-                        <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the
-                          payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                      </div>
-                    </div>
-                  </div>
+
     
                   <div class="border mb-3">
                     <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button"
-                        aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
+                        aria-expanded="false" aria-controls="collapsecheque">Cash ON Delivery</a></h3>
     
                     <div class="collapse" id="collapsecheque">
                       <div class="py-2 px-4">
-                        <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the
-                          payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                      </div>
-                    </div>
-                  </div>
-    
-                  <div class="border mb-5">
-                    <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsepaypal" role="button"
-                        aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
-    
-                    <div class="collapse" id="collapsepaypal">
-                      <div class="py-2 px-4">
-                        <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the
-                          payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                        <p class="mb-0">Make your payment After Deliverd your Product. Please check your Order ID as the
+                          payment reference.</p>
                       </div>
                     </div>
                   </div>

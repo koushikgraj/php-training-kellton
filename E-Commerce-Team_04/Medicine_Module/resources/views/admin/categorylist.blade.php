@@ -91,11 +91,11 @@
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
+            <a href="{{url('admin/cart')}}" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
             </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+            <a href="cart" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                 class="icon-menu"></span></a>
           </div>
         </div>
@@ -155,7 +155,7 @@ th, td {
     <td>{{$d->product}}</td>
     <td>{{$d->description}}</td>
     <td>{{$d->price}}</td>
-    <td><img src="{{asset('images/'.$d->image)}}" alt="image" class="img-fluid p-5" height="60%" width="60%"></td>  
+    <td><img src="{{asset('images/'.$d->image)}}" alt="image" class="img-fluid p-5" height="100%" width="100%"></td>  
   @if(session('user_id') =='1')
     <td>
      <a href="editcategory/{{$d->id}}" class="btn btn-info btn-success">Modify</a> 
@@ -168,10 +168,14 @@ th, td {
 </tr>
 @endforeach
 </table>
+{{{$data->links()}}}
 </body>
 </html>
-
-
+<style>
+.w-5{
+        display: none;
+      }
+</style>
 
 
 
