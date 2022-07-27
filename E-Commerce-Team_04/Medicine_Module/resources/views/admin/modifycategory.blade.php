@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MidKit &mdash; HealthCare</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="{{asset('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+  
+  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
+  <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+  <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+  <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+
+
+  <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+
+    <div class="site-navbar py-2">
+
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="" class="js-logo-clone"><h1><strong class="text-primary">Mid</strong>Kit</h1></a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li class="{{url('admin/home')}}"><a href="{{url('admin/home')}}">Home</a></li>
+                <li><a href="{{url('admin/store')}}">Store</a></li>
+                @if(session('user_id') =='1')
+                <li class="has-children">
+                  <a href="#">Category</a>
+                  <ul class="dropdown">
+                    <li><a href="{{url('admin/category/addcategory')}}">Add Category</a></li>
+                    <li><a href="{{url('admin/category/list')}}">List of Category</a></li>
+                    
+                  </ul>
+                </li>                        
+                @endif
+
+                <li><a href="{{url('admin/logout')}}">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="icons">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+   </div>
+
+
+
+
+
+
+
+
+
+<form action="{{url('admin/category/modifycategory')}}/{{$result->id}}" method="post">
+    @csrf
+    <div class="container-fluid position-relative d-flex p-0">
+       <!-- Sign Up Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                  <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                
+                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+
+                        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Update Medicine</h3>
+                           
+                        </div>
+                        <div>
+                          <input type="hidden" name="id" value="{{$result->id}}></input>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="file" class="form-control" name="image">
+                            <label for="floatingText">Product Image</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="product"  placeholder="enter product name">
+                            <label for="floatingText">Product Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="description"  placeholder="Enter Description">
+                            <label>Description</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" name="price">
+                            <label >Price</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sign Up End -->
+    </div>
+</form>
+
+
+
+
+<div class="site-section bg-image overlay" style="background-image: url('{{asset('images/hero_bg_2.jpg')}}');">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+         <div class="col-lg-7">
+           <h3 class="text-white">CASHBACK OFFER* UPTO ₹300</h3>
+           <h5><p class="text-white">Limited time cashback offer on payment of ₹600 or more using Paytm wallet</p></h5>
+         </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">Mail To <strong class="text-primary">MidKit</strong></h3>
+              <ul class="list-unstyled">
+                <li class="address">MidKit Internet Pvt Ltd. USA</li>
+                <li class="phone"><a href="tel://23923929210">+32 9519 8605 18</a></li>
+                <li class="email">mid.kit@domain.com</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">SOCIAL</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Registered Office Address</h3>
+              <ul class="list-unstyled">
+                <li class="address">MidKit Internet Pvt Ltd. M249, Rozok Colony, Erangle, BGMI Lite, USA</li>
+                <li class="phone"><a href="tel://23923929210">+32 9519 8605 18</a></li>
+                <li class="email">mid.kit@domain.com</li>
+              </ul>
+            </div>
+  </div>
+
+  <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{asset('js/jquery-ui.js')}}"></script>
+  <script src="{{asset('js/popper.min.js')}}"></script>
+  <script src="{{asset('js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{asset('js/aos.js')}}"></script>
+
+  <script src="{{asset('js/main.js')}}"></script>
+
+</body>
+
+</html>

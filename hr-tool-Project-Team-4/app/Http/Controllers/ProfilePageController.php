@@ -20,7 +20,7 @@ class ProfilePageController extends Controller {
 //====================================================================================================//
 //going to details form for storing Data in Database
 
-    public function gotoqdetail()
+    public function show_profile_data()
     {
         $posts = ProfilePage::all();
         return view ('showProfilePage')->with('posts', $posts);
